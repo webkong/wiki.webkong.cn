@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>python-常用高阶函数 | 文档中心</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="../favicon.ico">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon-152x152.png">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="msapplication-TileImage" content="/icons/msapplication-icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#000000">
+    
+    <link rel="preload" href="/assets/css/0.styles.c9ce0550.css" as="style"><link rel="preload" href="/assets/js/app.0a650b2c.js" as="script"><link rel="preload" href="/assets/js/4.96480d4c.js" as="script"><link rel="preload" href="/assets/js/1.5a7058d1.js" as="script"><link rel="preload" href="/assets/js/64.26b30be6.js" as="script"><link rel="preload" href="/assets/js/13.ef3d5a35.js" as="script"><link rel="prefetch" href="/assets/js/10.b920c37e.js"><link rel="prefetch" href="/assets/js/11.845ce65b.js"><link rel="prefetch" href="/assets/js/12.43a5e678.js"><link rel="prefetch" href="/assets/js/14.0d425186.js"><link rel="prefetch" href="/assets/js/15.0df21d26.js"><link rel="prefetch" href="/assets/js/16.7a98ef9d.js"><link rel="prefetch" href="/assets/js/17.189d00e2.js"><link rel="prefetch" href="/assets/js/18.5ed828ac.js"><link rel="prefetch" href="/assets/js/19.ee37572a.js"><link rel="prefetch" href="/assets/js/20.858141db.js"><link rel="prefetch" href="/assets/js/21.03ef384e.js"><link rel="prefetch" href="/assets/js/22.a5df63bd.js"><link rel="prefetch" href="/assets/js/23.db2d5032.js"><link rel="prefetch" href="/assets/js/24.6bf9bc51.js"><link rel="prefetch" href="/assets/js/25.982349b6.js"><link rel="prefetch" href="/assets/js/26.7e53e540.js"><link rel="prefetch" href="/assets/js/27.6217f995.js"><link rel="prefetch" href="/assets/js/28.185fd248.js"><link rel="prefetch" href="/assets/js/29.21fc3051.js"><link rel="prefetch" href="/assets/js/30.24322d5d.js"><link rel="prefetch" href="/assets/js/31.e3239af7.js"><link rel="prefetch" href="/assets/js/32.ec653209.js"><link rel="prefetch" href="/assets/js/33.bd090f45.js"><link rel="prefetch" href="/assets/js/34.4df87c5e.js"><link rel="prefetch" href="/assets/js/35.03954ead.js"><link rel="prefetch" href="/assets/js/36.81dbf7f7.js"><link rel="prefetch" href="/assets/js/37.5c4393d3.js"><link rel="prefetch" href="/assets/js/38.bdaba52a.js"><link rel="prefetch" href="/assets/js/39.6f48c173.js"><link rel="prefetch" href="/assets/js/40.aa39c874.js"><link rel="prefetch" href="/assets/js/41.d66c6244.js"><link rel="prefetch" href="/assets/js/42.4286b8e6.js"><link rel="prefetch" href="/assets/js/43.7a154d18.js"><link rel="prefetch" href="/assets/js/44.fdf6ead9.js"><link rel="prefetch" href="/assets/js/45.0dd7f5a5.js"><link rel="prefetch" href="/assets/js/46.c983d29c.js"><link rel="prefetch" href="/assets/js/47.dd8e070b.js"><link rel="prefetch" href="/assets/js/48.a24bfa4d.js"><link rel="prefetch" href="/assets/js/49.f62fd2ed.js"><link rel="prefetch" href="/assets/js/5.bd239b8e.js"><link rel="prefetch" href="/assets/js/50.b1d9827b.js"><link rel="prefetch" href="/assets/js/51.38556f04.js"><link rel="prefetch" href="/assets/js/52.8d3e710e.js"><link rel="prefetch" href="/assets/js/53.a1493c40.js"><link rel="prefetch" href="/assets/js/54.6f02eae8.js"><link rel="prefetch" href="/assets/js/55.67578cce.js"><link rel="prefetch" href="/assets/js/56.c50a8b8d.js"><link rel="prefetch" href="/assets/js/57.5d222f70.js"><link rel="prefetch" href="/assets/js/58.620e2d71.js"><link rel="prefetch" href="/assets/js/59.148cd283.js"><link rel="prefetch" href="/assets/js/6.c24fad1c.js"><link rel="prefetch" href="/assets/js/60.30f918a7.js"><link rel="prefetch" href="/assets/js/61.74c48c82.js"><link rel="prefetch" href="/assets/js/62.634d3aaf.js"><link rel="prefetch" href="/assets/js/63.e356fa66.js"><link rel="prefetch" href="/assets/js/65.62d70c41.js"><link rel="prefetch" href="/assets/js/66.1e400eee.js"><link rel="prefetch" href="/assets/js/67.ffab507b.js"><link rel="prefetch" href="/assets/js/68.1d05ca19.js"><link rel="prefetch" href="/assets/js/69.1c1fd4fb.js"><link rel="prefetch" href="/assets/js/7.44b5c637.js"><link rel="prefetch" href="/assets/js/70.423c4573.js"><link rel="prefetch" href="/assets/js/71.7ad35cd2.js"><link rel="prefetch" href="/assets/js/72.0760c94d.js"><link rel="prefetch" href="/assets/js/73.337bd016.js"><link rel="prefetch" href="/assets/js/74.a1987330.js"><link rel="prefetch" href="/assets/js/75.4855cae4.js"><link rel="prefetch" href="/assets/js/76.4b830a3d.js"><link rel="prefetch" href="/assets/js/77.8015a611.js"><link rel="prefetch" href="/assets/js/78.27d34d79.js"><link rel="prefetch" href="/assets/js/79.a6e63e86.js"><link rel="prefetch" href="/assets/js/8.93640005.js"><link rel="prefetch" href="/assets/js/80.0b1a47f0.js"><link rel="prefetch" href="/assets/js/81.934cabc6.js"><link rel="prefetch" href="/assets/js/82.813e508d.js"><link rel="prefetch" href="/assets/js/83.2412f429.js"><link rel="prefetch" href="/assets/js/84.35773649.js"><link rel="prefetch" href="/assets/js/85.8071d88a.js"><link rel="prefetch" href="/assets/js/86.80002fa3.js"><link rel="prefetch" href="/assets/js/9.0dd6c129.js"><link rel="prefetch" href="/assets/js/vendors~flowchart.9e4d2f05.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.c9ce0550.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container" data-v-1156296a><div data-v-1156296a><div id="loader-wrapper" class="loading-wrapper" data-v-d48f4d20 data-v-1156296a data-v-1156296a><div class="loader-main" data-v-d48f4d20><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-4e82dffc data-v-1156296a data-v-1156296a><h3 class="title" data-v-4e82dffc data-v-4e82dffc>文档中心</h3> <p class="description" data-v-4e82dffc data-v-4e82dffc></p> <label id="box" class="inputBox" data-v-4e82dffc data-v-4e82dffc><input type="password" value="" data-v-4e82dffc> <span data-v-4e82dffc>Konck! Knock!</span> <button data-v-4e82dffc>OK</button></label> <div class="footer" data-v-4e82dffc data-v-4e82dffc><span data-v-4e82dffc><i class="iconfont reco-theme" data-v-4e82dffc></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-4e82dffc>vuePress-theme-reco</a></span> <span data-v-4e82dffc><i class="iconfont reco-copyright" data-v-4e82dffc></i> <a data-v-4e82dffc><span data-v-4e82dffc>webkong</span>
+            
+          <!---->
+          2021
+        </a></span></div></div> <div class="hide" data-v-1156296a><header class="navbar" data-v-1156296a><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">文档中心</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      基础&amp;概念
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Basics/javascript/" class="nav-link"><i class="undefined"></i>
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/Basics/css/css.html" class="nav-link"><i class="undefined"></i>
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/Basics/glossary/glossary.html" class="nav-link"><i class="undefined"></i>
+  术语表
+</a></li><li class="dropdown-item"><!----> <a href="/Basics/designMode/" class="nav-link"><i class="undefined"></i>
+  设计模式
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      前端框架
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/MVVM/vue/" class="nav-link"><i class="undefined"></i>
+  Vue.js
+</a></li></ul></div></div><div class="nav-item"><a href="/NodeJS/node.html" class="nav-link"><i class="undefined"></i>
+  NodeJS
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      工程化
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Engineering/webpack/" class="nav-link"><i class="undefined"></i>
+  WebPack
+</a></li><li class="dropdown-item"><!----> <a href="/Engineering/git/" class="nav-link"><i class="undefined"></i>
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/Engineering/nginx/nginx-hide.html" class="nav-link"><i class="undefined"></i>
+  Nginx
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      进阶
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Advance/algorithm/" class="nav-link"><i class="undefined"></i>
+  算法&amp;数据结构
+</a></li><li class="dropdown-item"><!----> <a href="/Advance/network/" class="nav-link"><i class="undefined"></i>
+  网络&amp;安全
+</a></li><li class="dropdown-item"><!----> <a href="/Advance/chrome/" class="nav-link"><i class="undefined"></i>
+  Chrome
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      语言
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Languages/lua/lua.html" class="nav-link"><i class="undefined"></i>
+  Lua
+</a></li><li class="dropdown-item"><!----> <a href="/Languages/swift/swift.html" class="nav-link"><i class="undefined"></i>
+  Swift
+</a></li><li class="dropdown-item"><!----> <a href="/Languages/python/python.html" aria-current="page" class="nav-link router-link-exact-active router-link-active"><i class="undefined"></i>
+  Python
+</a></li></ul></div></div><div class="nav-item"><a href="/Other/any-connect.html" class="nav-link"><i class="undefined"></i>
+  杂项
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  TimeLine
+</a></div> <a href="https://github.com/webkong/wiki.webkong.cn" target="_blank" rel="noopener noreferrer" class="repo-link"><i class="iconfont reco-github"></i>
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask" data-v-1156296a></div> <aside class="sidebar" data-v-1156296a><div class="personal-info-wrapper" data-v-828910c6 data-v-1156296a><!----> <h3 class="name" data-v-828910c6>
+    webkong
+  </h3> <div class="num" data-v-828910c6><div data-v-828910c6><h3 data-v-828910c6>72</h3> <h6 data-v-828910c6>Articles</h6></div> <div data-v-828910c6><h3 data-v-828910c6>15</h3> <h6 data-v-828910c6>Tags</h6></div></div> <ul class="social-links" data-v-828910c6><li class="social-item" data-v-828910c6><i class="iconfont reco-github" style="color:#f47e60;" data-v-828910c6></i></li><li class="social-item" data-v-828910c6><i class="iconfont reco-npm" style="color:#3498db;" data-v-828910c6></i></li></ul> <hr data-v-828910c6></div> <nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      基础&amp;概念
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Basics/javascript/" class="nav-link"><i class="undefined"></i>
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/Basics/css/css.html" class="nav-link"><i class="undefined"></i>
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/Basics/glossary/glossary.html" class="nav-link"><i class="undefined"></i>
+  术语表
+</a></li><li class="dropdown-item"><!----> <a href="/Basics/designMode/" class="nav-link"><i class="undefined"></i>
+  设计模式
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      前端框架
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/MVVM/vue/" class="nav-link"><i class="undefined"></i>
+  Vue.js
+</a></li></ul></div></div><div class="nav-item"><a href="/NodeJS/node.html" class="nav-link"><i class="undefined"></i>
+  NodeJS
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      工程化
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Engineering/webpack/" class="nav-link"><i class="undefined"></i>
+  WebPack
+</a></li><li class="dropdown-item"><!----> <a href="/Engineering/git/" class="nav-link"><i class="undefined"></i>
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/Engineering/nginx/nginx-hide.html" class="nav-link"><i class="undefined"></i>
+  Nginx
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      进阶
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Advance/algorithm/" class="nav-link"><i class="undefined"></i>
+  算法&amp;数据结构
+</a></li><li class="dropdown-item"><!----> <a href="/Advance/network/" class="nav-link"><i class="undefined"></i>
+  网络&amp;安全
+</a></li><li class="dropdown-item"><!----> <a href="/Advance/chrome/" class="nav-link"><i class="undefined"></i>
+  Chrome
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      语言
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Languages/lua/lua.html" class="nav-link"><i class="undefined"></i>
+  Lua
+</a></li><li class="dropdown-item"><!----> <a href="/Languages/swift/swift.html" class="nav-link"><i class="undefined"></i>
+  Swift
+</a></li><li class="dropdown-item"><!----> <a href="/Languages/python/python.html" aria-current="page" class="nav-link router-link-exact-active router-link-active"><i class="undefined"></i>
+  Python
+</a></li></ul></div></div><div class="nav-item"><a href="/Other/any-connect.html" class="nav-link"><i class="undefined"></i>
+  杂项
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  TimeLine
+</a></div> <a href="https://github.com/webkong/wiki.webkong.cn" target="_blank" rel="noopener noreferrer" class="repo-link"><i class="iconfont reco-github"></i>
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav> <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Python</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/Languages/python/django-reset-pwd.html" class="sidebar-link">Django重置admin密码</a></li><li><a href="/Languages/python/django.html" class="sidebar-link">Django的基础使用</a></li><li><a href="/Languages/python/python-bulitin.html" class="sidebar-link">python-内建的一些函数</a></li><li><a href="/Languages/python/python-dict.html" class="sidebar-link">python-字典的常用操作</a></li><li><a href="/Languages/python/python-list.html" class="sidebar-link">python-列表常用操作</a></li><li><a href="/Languages/python/python.html" aria-current="page" class="active sidebar-link">python-常用高阶函数</a></li></ul></section></li></ul> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-4e82dffc data-v-1156296a><h3 class="title" data-v-4e82dffc data-v-4e82dffc>python-常用高阶函数</h3> <!----> <label id="box" class="inputBox" data-v-4e82dffc data-v-4e82dffc><input type="password" value="" data-v-4e82dffc> <span data-v-4e82dffc>Konck! Knock!</span> <button data-v-4e82dffc>OK</button></label> <div class="footer" data-v-4e82dffc data-v-4e82dffc><span data-v-4e82dffc><i class="iconfont reco-theme" data-v-4e82dffc></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-4e82dffc>vuePress-theme-reco</a></span> <span data-v-4e82dffc><i class="iconfont reco-copyright" data-v-4e82dffc></i> <a data-v-4e82dffc><span data-v-4e82dffc>webkong</span>
+            
+          <!---->
+          2021
+        </a></span></div></div> <div data-v-1156296a><main class="page" style="padding-right:0;"><section><div class="page-title"><h1 class="title">python-常用高阶函数</h1> <div data-v-1ff7123e><i class="iconfont reco-account" data-v-1ff7123e><span data-v-1ff7123e>webkong</span></i> <i class="iconfont reco-date" data-v-1ff7123e><span data-v-1ff7123e>6/15/2017</span></i> <!----> <!----></div></div> <div class="theme-reco-content content__default"><blockquote><p>温故而知新，可以为师矣。</p></blockquote> <p>什么是高阶函数， 在数学和计算机的定义里面，高阶函数至少要满足一下一个条件：</p> <ul><li>接受一个或者多个函数作为输入</li> <li>输出一个函数</li></ul> <p>越是高级的语言，越贴近计算，抽象度越高。这里不得不说函数式编程，函数式编程的一个特点就是，允许把函数本身作为一个参数传递给另一个函数，还允许返回一个函数。像 JavaScript 等</p> <h4 id="map-函数"><a href="#map-函数" class="header-anchor">#</a> map()函数</h4> <p>map()是 Python 内置的高阶函数，它接收一个函数 f 和一个 list，并通过把函数 f 依次作用在 list 的每个元素上，得到一个新的 list 并返回。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>def f(x):
+    return x*x
+print map(f, [1, 2, 3, 4, 5, 6, 7, 8, 9])
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>输出结果</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>[1, 4, 9, 10, 25, 36, 49, 64, 81]
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h4 id="reduce-函数"><a href="#reduce-函数" class="header-anchor">#</a> reduce()函数</h4> <p>reduce()函数也是 Python 内置的一个高阶函数。reduce()函数接收的参数和 map()类似，一个函数 f，一个 list，但行为和 map()不同，reduce()传入的函数 f 必须接收两个参数，reduce()对 list 的每个元素反复调用函数 f，并返回最终结果值。
+例如，编写一个 f 函数，接收 x 和 y，返回 x 和 y 的和：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>def f(x, y):
+    return x + y
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>调用 reduce(f, [1, 3, 5, 7, 9])时，reduce 函数将做如下计算：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>先计算头两个元素：f(1, 3)，结果为4；
+再把结果和第3个元素计算：f(4, 5)，结果为9；
+再把结果和第4个元素计算：f(9, 7)，结果为16；
+再把结果和第5个元素计算：f(16, 9)，结果为25；
+由于没有更多的元素了，计算结束，返回结果25。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p>上述计算实际上是对 list 的所有元素求和。虽然 Python 内置了求和函数 sum()，但是，利用 reduce()求和也很简单。
+reduce()还可以接收第 3 个可选参数，作为计算的初始值。如果把初始值设为 100，计算：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>reduce(f, [1, 3, 5, 7, 9], 100)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>结果将变为 125，因为第一轮计算是：
+计算初始值和第一个元素：f(100, 1)，结果为 101。</p> <h4 id="filter-函数"><a href="#filter-函数" class="header-anchor">#</a> filter()函数</h4> <p>filter()函数是 Python 内置高阶函数，filter()函数接收一个函数 f 和一个 list，这个函数 f 的作用是对每个元素进行判断，返回 True 或 False，filter()根据判断结果自动过滤掉不符合条件的元素，返回由符合条件元素组成的新 list。
+例如，要从一个 list [1, 4, 6, 7, 9, 12, 17]中删除偶数，保留奇数，首先，要编写一个判断奇数的函数：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>def is_odd(x):
+    return x % 2 == 1
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>然后，利用 filter()过滤掉偶数：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>filter(is_odd, [1, 4, 6, 7, 9, 12, 17])
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>结果：[1, 7, 9, 17]
+利用 filter()，可以完成很多有用的功能，例如，删除 None 或者空字符串：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>def is_not_empty(s):
+    return s and len(s.strip()) &gt; 0
+filter(is_not_empty, ['test', None, '', 'str', '  ', 'END'])
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>结果：['test', 'str', 'END']
+注意: s.strip(rm) 删除 s 字符串中开头、结尾处的 rm 序列的字符。
+当 rm 为空时，默认删除空白符（包括'\n', '\r', '\t', ' ')，如下：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>a = '     123'
+a.strip()
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>结果： '123'</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>a='\t\t123\r\n'
+a.strip()
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>结果：'123'</p> <h4 id="自定义排序函数"><a href="#自定义排序函数" class="header-anchor">#</a> 自定义排序函数</h4> <p>Python 内置的 sorted()函数可对 list 进行排序：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>&gt;&gt;&gt;sorted([36, 5, 12, 9, 21])
+[5, 9, 12, 21, 36]
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>但 sorted()也是一个高阶函数，它可以接收一个比较函数来实现自定义排序，比较函数的定义是，传入两个待比较的元素 x, y，如果 x 应该排在 y 的前面，返回 -1，如果 x 应该排在 y 的后面，返回 1。如果 x 和 y 相等，返回 0。
+因此，如果我们要实现倒序排序，只需要编写一个 reversed_cmp 函数：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>def reversed_cmp(x, y):
+    if x &gt; y:
+        return -1
+    if x &lt; y:
+        return 1
+    return 0
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><p>这样，调用 sorted() 并传入 reversed_cmp 就可以实现倒序排序：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>&gt;&gt;&gt; sorted([36, 5, 12, 9, 21], reversed_cmp)
+[36, 21, 12, 9, 5]
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>sorted()也可以对字符串进行排序，字符串默认按照 ASCII 大小来比较：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>&gt;&gt;&gt; sorted(['bob', 'about', 'Zoe', 'Credit'])
+['Credit', 'Zoe', 'about', 'bob']
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>'Zoe'排在'about'之前是因为'Z'的 ASCII 码比'a'小。</p></div></section> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">最后更新时间: </span> <span class="time">3/12/2021, 10:45:12 AM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev"><a href="/Languages/python/python-list.html" class="prev">
+            python-列表常用操作
+          </a></span> <!----></p></div> <div class="comments-wrapper"><!----></div> <ul class="side-bar sub-sidebar-wrapper" style="width:0;" data-v-70334359></ul></main> <!----></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div><!----><!----></div></div>
+    <script src="/assets/js/app.0a650b2c.js" defer></script><script src="/assets/js/4.96480d4c.js" defer></script><script src="/assets/js/1.5a7058d1.js" defer></script><script src="/assets/js/64.26b30be6.js" defer></script><script src="/assets/js/13.ef3d5a35.js" defer></script>
+  </body>
+</html>

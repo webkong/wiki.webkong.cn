@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>python-字典的常用操作 | 文档中心</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="../favicon.ico">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon-152x152.png">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="msapplication-TileImage" content="/icons/msapplication-icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#000000">
+    
+    <link rel="preload" href="/assets/css/0.styles.c9ce0550.css" as="style"><link rel="preload" href="/assets/js/app.0a650b2c.js" as="script"><link rel="preload" href="/assets/js/4.96480d4c.js" as="script"><link rel="preload" href="/assets/js/1.5a7058d1.js" as="script"><link rel="preload" href="/assets/js/62.634d3aaf.js" as="script"><link rel="preload" href="/assets/js/13.ef3d5a35.js" as="script"><link rel="prefetch" href="/assets/js/10.b920c37e.js"><link rel="prefetch" href="/assets/js/11.845ce65b.js"><link rel="prefetch" href="/assets/js/12.43a5e678.js"><link rel="prefetch" href="/assets/js/14.0d425186.js"><link rel="prefetch" href="/assets/js/15.0df21d26.js"><link rel="prefetch" href="/assets/js/16.7a98ef9d.js"><link rel="prefetch" href="/assets/js/17.189d00e2.js"><link rel="prefetch" href="/assets/js/18.5ed828ac.js"><link rel="prefetch" href="/assets/js/19.ee37572a.js"><link rel="prefetch" href="/assets/js/20.858141db.js"><link rel="prefetch" href="/assets/js/21.03ef384e.js"><link rel="prefetch" href="/assets/js/22.a5df63bd.js"><link rel="prefetch" href="/assets/js/23.db2d5032.js"><link rel="prefetch" href="/assets/js/24.6bf9bc51.js"><link rel="prefetch" href="/assets/js/25.982349b6.js"><link rel="prefetch" href="/assets/js/26.7e53e540.js"><link rel="prefetch" href="/assets/js/27.6217f995.js"><link rel="prefetch" href="/assets/js/28.185fd248.js"><link rel="prefetch" href="/assets/js/29.21fc3051.js"><link rel="prefetch" href="/assets/js/30.24322d5d.js"><link rel="prefetch" href="/assets/js/31.e3239af7.js"><link rel="prefetch" href="/assets/js/32.ec653209.js"><link rel="prefetch" href="/assets/js/33.bd090f45.js"><link rel="prefetch" href="/assets/js/34.4df87c5e.js"><link rel="prefetch" href="/assets/js/35.03954ead.js"><link rel="prefetch" href="/assets/js/36.81dbf7f7.js"><link rel="prefetch" href="/assets/js/37.5c4393d3.js"><link rel="prefetch" href="/assets/js/38.bdaba52a.js"><link rel="prefetch" href="/assets/js/39.6f48c173.js"><link rel="prefetch" href="/assets/js/40.aa39c874.js"><link rel="prefetch" href="/assets/js/41.d66c6244.js"><link rel="prefetch" href="/assets/js/42.4286b8e6.js"><link rel="prefetch" href="/assets/js/43.7a154d18.js"><link rel="prefetch" href="/assets/js/44.fdf6ead9.js"><link rel="prefetch" href="/assets/js/45.0dd7f5a5.js"><link rel="prefetch" href="/assets/js/46.c983d29c.js"><link rel="prefetch" href="/assets/js/47.dd8e070b.js"><link rel="prefetch" href="/assets/js/48.a24bfa4d.js"><link rel="prefetch" href="/assets/js/49.f62fd2ed.js"><link rel="prefetch" href="/assets/js/5.bd239b8e.js"><link rel="prefetch" href="/assets/js/50.b1d9827b.js"><link rel="prefetch" href="/assets/js/51.38556f04.js"><link rel="prefetch" href="/assets/js/52.8d3e710e.js"><link rel="prefetch" href="/assets/js/53.a1493c40.js"><link rel="prefetch" href="/assets/js/54.6f02eae8.js"><link rel="prefetch" href="/assets/js/55.67578cce.js"><link rel="prefetch" href="/assets/js/56.c50a8b8d.js"><link rel="prefetch" href="/assets/js/57.5d222f70.js"><link rel="prefetch" href="/assets/js/58.620e2d71.js"><link rel="prefetch" href="/assets/js/59.148cd283.js"><link rel="prefetch" href="/assets/js/6.c24fad1c.js"><link rel="prefetch" href="/assets/js/60.30f918a7.js"><link rel="prefetch" href="/assets/js/61.74c48c82.js"><link rel="prefetch" href="/assets/js/63.e356fa66.js"><link rel="prefetch" href="/assets/js/64.26b30be6.js"><link rel="prefetch" href="/assets/js/65.62d70c41.js"><link rel="prefetch" href="/assets/js/66.1e400eee.js"><link rel="prefetch" href="/assets/js/67.ffab507b.js"><link rel="prefetch" href="/assets/js/68.1d05ca19.js"><link rel="prefetch" href="/assets/js/69.1c1fd4fb.js"><link rel="prefetch" href="/assets/js/7.44b5c637.js"><link rel="prefetch" href="/assets/js/70.423c4573.js"><link rel="prefetch" href="/assets/js/71.7ad35cd2.js"><link rel="prefetch" href="/assets/js/72.0760c94d.js"><link rel="prefetch" href="/assets/js/73.337bd016.js"><link rel="prefetch" href="/assets/js/74.a1987330.js"><link rel="prefetch" href="/assets/js/75.4855cae4.js"><link rel="prefetch" href="/assets/js/76.4b830a3d.js"><link rel="prefetch" href="/assets/js/77.8015a611.js"><link rel="prefetch" href="/assets/js/78.27d34d79.js"><link rel="prefetch" href="/assets/js/79.a6e63e86.js"><link rel="prefetch" href="/assets/js/8.93640005.js"><link rel="prefetch" href="/assets/js/80.0b1a47f0.js"><link rel="prefetch" href="/assets/js/81.934cabc6.js"><link rel="prefetch" href="/assets/js/82.813e508d.js"><link rel="prefetch" href="/assets/js/83.2412f429.js"><link rel="prefetch" href="/assets/js/84.35773649.js"><link rel="prefetch" href="/assets/js/85.8071d88a.js"><link rel="prefetch" href="/assets/js/86.80002fa3.js"><link rel="prefetch" href="/assets/js/9.0dd6c129.js"><link rel="prefetch" href="/assets/js/vendors~flowchart.9e4d2f05.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.c9ce0550.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container" data-v-1156296a><div data-v-1156296a><div id="loader-wrapper" class="loading-wrapper" data-v-d48f4d20 data-v-1156296a data-v-1156296a><div class="loader-main" data-v-d48f4d20><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-4e82dffc data-v-1156296a data-v-1156296a><h3 class="title" data-v-4e82dffc data-v-4e82dffc>文档中心</h3> <p class="description" data-v-4e82dffc data-v-4e82dffc></p> <label id="box" class="inputBox" data-v-4e82dffc data-v-4e82dffc><input type="password" value="" data-v-4e82dffc> <span data-v-4e82dffc>Konck! Knock!</span> <button data-v-4e82dffc>OK</button></label> <div class="footer" data-v-4e82dffc data-v-4e82dffc><span data-v-4e82dffc><i class="iconfont reco-theme" data-v-4e82dffc></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-4e82dffc>vuePress-theme-reco</a></span> <span data-v-4e82dffc><i class="iconfont reco-copyright" data-v-4e82dffc></i> <a data-v-4e82dffc><span data-v-4e82dffc>webkong</span>
+            
+          <!---->
+          2021
+        </a></span></div></div> <div class="hide" data-v-1156296a><header class="navbar" data-v-1156296a><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">文档中心</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      基础&amp;概念
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Basics/javascript/" class="nav-link"><i class="undefined"></i>
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/Basics/css/css.html" class="nav-link"><i class="undefined"></i>
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/Basics/glossary/glossary.html" class="nav-link"><i class="undefined"></i>
+  术语表
+</a></li><li class="dropdown-item"><!----> <a href="/Basics/designMode/" class="nav-link"><i class="undefined"></i>
+  设计模式
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      前端框架
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/MVVM/vue/" class="nav-link"><i class="undefined"></i>
+  Vue.js
+</a></li></ul></div></div><div class="nav-item"><a href="/NodeJS/node.html" class="nav-link"><i class="undefined"></i>
+  NodeJS
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      工程化
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Engineering/webpack/" class="nav-link"><i class="undefined"></i>
+  WebPack
+</a></li><li class="dropdown-item"><!----> <a href="/Engineering/git/" class="nav-link"><i class="undefined"></i>
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/Engineering/nginx/nginx-hide.html" class="nav-link"><i class="undefined"></i>
+  Nginx
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      进阶
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Advance/algorithm/" class="nav-link"><i class="undefined"></i>
+  算法&amp;数据结构
+</a></li><li class="dropdown-item"><!----> <a href="/Advance/network/" class="nav-link"><i class="undefined"></i>
+  网络&amp;安全
+</a></li><li class="dropdown-item"><!----> <a href="/Advance/chrome/" class="nav-link"><i class="undefined"></i>
+  Chrome
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      语言
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Languages/lua/lua.html" class="nav-link"><i class="undefined"></i>
+  Lua
+</a></li><li class="dropdown-item"><!----> <a href="/Languages/swift/swift.html" class="nav-link"><i class="undefined"></i>
+  Swift
+</a></li><li class="dropdown-item"><!----> <a href="/Languages/python/python.html" class="nav-link"><i class="undefined"></i>
+  Python
+</a></li></ul></div></div><div class="nav-item"><a href="/Other/any-connect.html" class="nav-link"><i class="undefined"></i>
+  杂项
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  TimeLine
+</a></div> <a href="https://github.com/webkong/wiki.webkong.cn" target="_blank" rel="noopener noreferrer" class="repo-link"><i class="iconfont reco-github"></i>
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask" data-v-1156296a></div> <aside class="sidebar" data-v-1156296a><div class="personal-info-wrapper" data-v-828910c6 data-v-1156296a><!----> <h3 class="name" data-v-828910c6>
+    webkong
+  </h3> <div class="num" data-v-828910c6><div data-v-828910c6><h3 data-v-828910c6>72</h3> <h6 data-v-828910c6>Articles</h6></div> <div data-v-828910c6><h3 data-v-828910c6>15</h3> <h6 data-v-828910c6>Tags</h6></div></div> <ul class="social-links" data-v-828910c6><li class="social-item" data-v-828910c6><i class="iconfont reco-github" style="color:#f47e60;" data-v-828910c6></i></li><li class="social-item" data-v-828910c6><i class="iconfont reco-npm" style="color:#3498db;" data-v-828910c6></i></li></ul> <hr data-v-828910c6></div> <nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      基础&amp;概念
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Basics/javascript/" class="nav-link"><i class="undefined"></i>
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/Basics/css/css.html" class="nav-link"><i class="undefined"></i>
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/Basics/glossary/glossary.html" class="nav-link"><i class="undefined"></i>
+  术语表
+</a></li><li class="dropdown-item"><!----> <a href="/Basics/designMode/" class="nav-link"><i class="undefined"></i>
+  设计模式
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      前端框架
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/MVVM/vue/" class="nav-link"><i class="undefined"></i>
+  Vue.js
+</a></li></ul></div></div><div class="nav-item"><a href="/NodeJS/node.html" class="nav-link"><i class="undefined"></i>
+  NodeJS
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      工程化
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Engineering/webpack/" class="nav-link"><i class="undefined"></i>
+  WebPack
+</a></li><li class="dropdown-item"><!----> <a href="/Engineering/git/" class="nav-link"><i class="undefined"></i>
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/Engineering/nginx/nginx-hide.html" class="nav-link"><i class="undefined"></i>
+  Nginx
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      进阶
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Advance/algorithm/" class="nav-link"><i class="undefined"></i>
+  算法&amp;数据结构
+</a></li><li class="dropdown-item"><!----> <a href="/Advance/network/" class="nav-link"><i class="undefined"></i>
+  网络&amp;安全
+</a></li><li class="dropdown-item"><!----> <a href="/Advance/chrome/" class="nav-link"><i class="undefined"></i>
+  Chrome
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      语言
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Languages/lua/lua.html" class="nav-link"><i class="undefined"></i>
+  Lua
+</a></li><li class="dropdown-item"><!----> <a href="/Languages/swift/swift.html" class="nav-link"><i class="undefined"></i>
+  Swift
+</a></li><li class="dropdown-item"><!----> <a href="/Languages/python/python.html" class="nav-link"><i class="undefined"></i>
+  Python
+</a></li></ul></div></div><div class="nav-item"><a href="/Other/any-connect.html" class="nav-link"><i class="undefined"></i>
+  杂项
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  TimeLine
+</a></div> <a href="https://github.com/webkong/wiki.webkong.cn" target="_blank" rel="noopener noreferrer" class="repo-link"><i class="iconfont reco-github"></i>
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav> <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Python</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/Languages/python/django-reset-pwd.html" class="sidebar-link">Django重置admin密码</a></li><li><a href="/Languages/python/django.html" class="sidebar-link">Django的基础使用</a></li><li><a href="/Languages/python/python-bulitin.html" class="sidebar-link">python-内建的一些函数</a></li><li><a href="/Languages/python/python-dict.html" aria-current="page" class="active sidebar-link">python-字典的常用操作</a></li><li><a href="/Languages/python/python-list.html" class="sidebar-link">python-列表常用操作</a></li><li><a href="/Languages/python/python.html" class="sidebar-link">python-常用高阶函数</a></li></ul></section></li></ul> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-4e82dffc data-v-1156296a><h3 class="title" data-v-4e82dffc data-v-4e82dffc>python-字典的常用操作</h3> <!----> <label id="box" class="inputBox" data-v-4e82dffc data-v-4e82dffc><input type="password" value="" data-v-4e82dffc> <span data-v-4e82dffc>Konck! Knock!</span> <button data-v-4e82dffc>OK</button></label> <div class="footer" data-v-4e82dffc data-v-4e82dffc><span data-v-4e82dffc><i class="iconfont reco-theme" data-v-4e82dffc></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-4e82dffc>vuePress-theme-reco</a></span> <span data-v-4e82dffc><i class="iconfont reco-copyright" data-v-4e82dffc></i> <a data-v-4e82dffc><span data-v-4e82dffc>webkong</span>
+            
+          <!---->
+          2021
+        </a></span></div></div> <div data-v-1156296a><main class="page"><section><div class="page-title"><h1 class="title">python-字典的常用操作</h1> <div data-v-1ff7123e><i class="iconfont reco-account" data-v-1ff7123e><span data-v-1ff7123e>webkong</span></i> <i class="iconfont reco-date" data-v-1ff7123e><span data-v-1ff7123e>6/15/2017</span></i> <!----> <!----></div></div> <div class="theme-reco-content content__default"><blockquote><p>罗列字典的常用操作，遵循艾宾浩斯记忆遗忘曲线，让知识固化，方便查询和使用。</p></blockquote> <h3 id="创建-dict"><a href="#创建-dict" class="header-anchor">#</a> 创建 dict</h3> <h4 id="dict-函数"><a href="#dict-函数" class="header-anchor">#</a> dict 函数</h4> <p>dict 函数可以通过其他映射，比如字典或者<code>(key,value)</code>遮这样的序列对建立字典。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>&gt;&gt;&gt; items = [('name','webkong'),('age',18)]
+&gt;&gt;&gt; d = dict(items)
+&gt;&gt;&gt; d
+{'age': 18, 'name': 'webkong'}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p>或者通过关键字参数来创建</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>&gt;&gt;&gt; d = dict(name='webkong',age=18)
+&gt;&gt;&gt; d
+{'age': 18, 'name': 'webkong'}
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p>如果不带参数，就会返回空字典. 和 list, tuple, str 函数一样。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>&gt;&gt;&gt; a = dict()
+&gt;&gt;&gt; a
+{}
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p>也可以直接用字面量</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>&gt;&gt;&gt; c = {'name':'webkong','age':19}
+&gt;&gt;&gt; c
+{'age': 19, 'name': 'webkong'}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><h3 id="基本字典操作"><a href="#基本字典操作" class="header-anchor">#</a> 基本字典操作</h3> <h4 id="len"><a href="#len" class="header-anchor">#</a> len()</h4> <p>返回键值对的数量</p> <h4 id="del"><a href="#del" class="header-anchor">#</a> del</h4> <p>del a['name'] #删除键为 name 的值</p> <h4 id="in"><a href="#in" class="header-anchor">#</a> in</h4> <p>'name' in a 返回 True 检查字典中是否含有键为 name 的项</p> <h4 id="赋值"><a href="#赋值" class="header-anchor">#</a> 赋值</h4> <p>a['name'] = 'wsw'</p> <blockquote><p>键的类型： 字典的键是不可变类型，有可能是整型、浮点型（实型）、字符串或元组。
+添加：键不存在，也可以赋值，这样字典就会建立新的项。</p></blockquote> <h3 id="字典格式化字符串"><a href="#字典格式化字符串" class="header-anchor">#</a> 字典格式化字符串</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code>&gt;&gt;&gt; info
+{'age': 19, 'name': 'webkong'}
+&gt;&gt;&gt; &quot;%(name)s's age is %(age)s.&quot; % info
+&quot;webkong's age is 19.&quot;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p>只要给出的键可以在字典中找到，就可以使用任意数量的转换说明符。在模板系统中非常有用。</p> <h3 id="字典方法"><a href="#字典方法" class="header-anchor">#</a> 字典方法</h3> <h4 id="clear"><a href="#clear" class="header-anchor">#</a> clear</h4> <p>原地操作， 清除字典中的所有项， 无返回值（或者说返回 None）。</p> <h4 id="copy"><a href="#copy" class="header-anchor">#</a> copy</h4> <p>返回一个具有相同键值对的新字典。这种方法实现的是浅复制，因为值本身是相同的，而不是副本。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>&gt;&gt;&gt; info
+{'skills': ['html', 'css', 'js'], 'age': 19, 'name': 'webkong'}
+&gt;&gt;&gt; a = info.copy()
+&gt;&gt;&gt; a
+{'skills': ['html', 'css', 'js'], 'age': 19, 'name': 'webkong'}
+&gt;&gt;&gt; a['name'] = 'webkong1'
+&gt;&gt;&gt; a
+{'skills': ['html', 'css', 'js'], 'age': 19, 'name': 'webkong1'}
+&gt;&gt;&gt; info
+{'skills': ['html', 'css', 'js'], 'age': 19, 'name': 'webkong'}
+&gt;&gt;&gt; a['skills'].remove('html')
+&gt;&gt;&gt; a
+{'skills': ['css', 'js'], 'age': 19, 'name': 'webkong1'}
+&gt;&gt;&gt; info
+{'skills': ['css', 'js'], 'age': 19, 'name': 'webkong'}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><p>在替换值得时候，原字典不受影响， 但是如果用原地操作修改了某个值，原字典也会改变。</p> <p>避免这种问题的一种方式就是深复制(deep copy)</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>&gt;&gt;&gt; from copy import deepcopy
+&gt;&gt;&gt; info
+{'skills': ['css', 'js'], 'age': 19, 'name': 'webkong'}
+&gt;&gt;&gt; i = deepcopy(info)
+&gt;&gt;&gt; f = info.copy()
+&gt;&gt;&gt; f['skills'].append('js')
+&gt;&gt;&gt; f
+{'skills': ['css', 'js', 'js'], 'age': 19, 'name': 'webkong'}
+&gt;&gt;&gt; i
+{'skills': ['css', 'js'], 'age': 19, 'name': 'webkong'}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><h4 id="fromkeys"><a href="#fromkeys" class="header-anchor">#</a> fromkeys</h4> <p>使用给定的键建立新的字典，每一个键默认的值是 None.</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>&gt;&gt;&gt; a = {}.fromkeys(['name','age'])
+&gt;&gt;&gt; a
+{'age': None, 'name': None}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><h4 id="get"><a href="#get" class="header-anchor">#</a> get</h4> <p>访问字典项的方法，在访问不存在的项时，返回 None。也可以自己定义“默认值”</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>&gt;&gt;&gt; a
+{'age': None, 'name': None}
+&gt;&gt;&gt; a.get('kk','NNN')
+'NNN'
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><h4 id="has-key"><a href="#has-key" class="header-anchor">#</a> has_key</h4> <p>检查字典中是否又给出的键。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>a.has_key('name') 相当于 k in d
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><h4 id="items-iteritems"><a href="#items-iteritems" class="header-anchor">#</a> items &amp; iteritems</h4> <p>items 方法将所有的字典项以列表的方式返回，list 中的每一个项来自(key, value)，返回时没有次序。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code> info
+{'skills': ['css', 'js', 'js'], 'age': 19, 'name': 'webkong'}
+&gt;&gt;&gt; info.items()
+[('skills', ['css', 'js', 'js']), ('age', 19), ('name', 'webkong')]
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p>iteritems 方法和 items 大致相同，但是会返回一个迭代器对象。</p> <h4 id="keys-iterkeys"><a href="#keys-iterkeys" class="header-anchor">#</a> keys &amp; iterkeys</h4> <p>keys 方法将字典中的键以列表的形式返回， iterkeys 返回迭代器对象。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>&gt;&gt;&gt; info
+{'skills': ['css', 'js', 'js'], 'age': 19, 'name': 'webkong'}
+&gt;&gt;&gt; info.keys()
+['skills', 'age', 'name']
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><h4 id="pop"><a href="#pop" class="header-anchor">#</a> pop</h4> <p>pop 方法用来获取对应键的值，然后将这个键值对从字典中移除。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>&gt;&gt;&gt; info
+{'skills': ['css', 'js', 'js'], 'age': 19, 'name': 'webkong'}
+&gt;&gt;&gt; d = info.pop('name')
+&gt;&gt;&gt; d
+'webkong'
+&gt;&gt;&gt; info
+{'skills': ['css', 'js', 'js'], 'age': 19}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><h4 id="popitem"><a href="#popitem" class="header-anchor">#</a> popitem</h4> <p>popitem 类似于 list.pop，但不同的是，popitem 弹出的是随机项，因为字典没有最后项的概念。 若想一个接一个地移除并处理项，这个方法就很适合，不用首先获取键的列表。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>a.popitem()
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h4 id="setdefault"><a href="#setdefault" class="header-anchor">#</a> setdefault</h4> <p>setdefault 可以在字典不包含给定键值对的情况下设置相应的键值。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>&gt;&gt;&gt; b = {}
+&gt;&gt;&gt; b.setdefault('name','N/A')
+'N/A'
+&gt;&gt;&gt; b
+{'name': 'N/A'}
+&gt;&gt;&gt; b['name'] = 'webkong'
+&gt;&gt;&gt; b
+{'name': 'webkong'}
+&gt;&gt;&gt; b.setdefault('name','N/A')
+'webkong'
+&gt;&gt;&gt; b
+{'name': 'webkong'}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><h4 id="update"><a href="#update" class="header-anchor">#</a> update</h4> <p>update 方法可以利用一个字典项更新另外一个字典。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>&gt;&gt;&gt; a
+{'skills': ['css', 'js', 'js'], 'age': 19, 'name': 'webkong'}
+&gt;&gt;&gt; x = {'age':18}
+&gt;&gt;&gt; a.update(x)
+&gt;&gt;&gt; a
+{'skills': ['css', 'js', 'js'], 'age': 18, 'name': 'webkong'}
+&gt;&gt;&gt; y = {'kk':'kkkk'}
+&gt;&gt;&gt; a.update(y)
+&gt;&gt;&gt; a
+{'skills': ['css', 'js', 'js'], 'kk': 'kkkk', 'age': 18, 'name': 'webkong'}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><h4 id="values-itervalues"><a href="#values-itervalues" class="header-anchor">#</a> values &amp; itervalues</h4> <p>values 方法以列表的形式返回字典的值， 返回的值可以包含重复的元素。 itervalues 返回一个迭代对象。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>&gt;&gt;&gt; a
+{'skills': ['css', 'js', 'js'], 'kk': 'kkkk', 'age': 18, 'name': 'webkong'}
+&gt;&gt;&gt; a.values()
+[['css', 'js', 'js'], 'kkkk', 18, 'webkong']
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div></div></section> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">最后更新时间: </span> <span class="time">3/12/2021, 10:45:12 AM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev"><a href="/Languages/python/python-bulitin.html" class="prev">
+            python-内建的一些函数
+          </a></span> <span class="next"><a href="/Languages/python/python-list.html">
+            python-列表常用操作
+          </a></span></p></div> <div class="comments-wrapper"><!----></div> <ul class="side-bar sub-sidebar-wrapper" style="width:12rem;" data-v-70334359><li class="level-3" data-v-70334359><a href="/Languages/python/python-dict.html#创建-dict" class="sidebar-link reco-side-创建-dict" data-v-70334359>创建 dict</a></li><li class="level-3" data-v-70334359><a href="/Languages/python/python-dict.html#基本字典操作" class="sidebar-link reco-side-基本字典操作" data-v-70334359>基本字典操作</a></li><li class="level-3" data-v-70334359><a href="/Languages/python/python-dict.html#字典格式化字符串" class="sidebar-link reco-side-字典格式化字符串" data-v-70334359>字典格式化字符串</a></li><li class="level-3" data-v-70334359><a href="/Languages/python/python-dict.html#字典方法" class="sidebar-link reco-side-字典方法" data-v-70334359>字典方法</a></li></ul></main> <!----></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div><!----><!----></div></div>
+    <script src="/assets/js/app.0a650b2c.js" defer></script><script src="/assets/js/4.96480d4c.js" defer></script><script src="/assets/js/1.5a7058d1.js" defer></script><script src="/assets/js/62.634d3aaf.js" defer></script><script src="/assets/js/13.ef3d5a35.js" defer></script>
+  </body>
+</html>

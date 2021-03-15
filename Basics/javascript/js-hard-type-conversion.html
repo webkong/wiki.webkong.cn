@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>JavaScript强制类型转换 | 文档中心</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="../favicon.ico">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon-152x152.png">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="msapplication-TileImage" content="/icons/msapplication-icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#000000">
+    
+    <link rel="preload" href="/assets/css/0.styles.c9ce0550.css" as="style"><link rel="preload" href="/assets/js/app.0a650b2c.js" as="script"><link rel="preload" href="/assets/js/4.96480d4c.js" as="script"><link rel="preload" href="/assets/js/1.5a7058d1.js" as="script"><link rel="preload" href="/assets/js/45.0dd7f5a5.js" as="script"><link rel="preload" href="/assets/js/13.ef3d5a35.js" as="script"><link rel="prefetch" href="/assets/js/10.b920c37e.js"><link rel="prefetch" href="/assets/js/11.845ce65b.js"><link rel="prefetch" href="/assets/js/12.43a5e678.js"><link rel="prefetch" href="/assets/js/14.0d425186.js"><link rel="prefetch" href="/assets/js/15.0df21d26.js"><link rel="prefetch" href="/assets/js/16.7a98ef9d.js"><link rel="prefetch" href="/assets/js/17.189d00e2.js"><link rel="prefetch" href="/assets/js/18.5ed828ac.js"><link rel="prefetch" href="/assets/js/19.ee37572a.js"><link rel="prefetch" href="/assets/js/20.858141db.js"><link rel="prefetch" href="/assets/js/21.03ef384e.js"><link rel="prefetch" href="/assets/js/22.a5df63bd.js"><link rel="prefetch" href="/assets/js/23.db2d5032.js"><link rel="prefetch" href="/assets/js/24.6bf9bc51.js"><link rel="prefetch" href="/assets/js/25.982349b6.js"><link rel="prefetch" href="/assets/js/26.7e53e540.js"><link rel="prefetch" href="/assets/js/27.6217f995.js"><link rel="prefetch" href="/assets/js/28.185fd248.js"><link rel="prefetch" href="/assets/js/29.21fc3051.js"><link rel="prefetch" href="/assets/js/30.24322d5d.js"><link rel="prefetch" href="/assets/js/31.e3239af7.js"><link rel="prefetch" href="/assets/js/32.ec653209.js"><link rel="prefetch" href="/assets/js/33.bd090f45.js"><link rel="prefetch" href="/assets/js/34.4df87c5e.js"><link rel="prefetch" href="/assets/js/35.03954ead.js"><link rel="prefetch" href="/assets/js/36.81dbf7f7.js"><link rel="prefetch" href="/assets/js/37.5c4393d3.js"><link rel="prefetch" href="/assets/js/38.bdaba52a.js"><link rel="prefetch" href="/assets/js/39.6f48c173.js"><link rel="prefetch" href="/assets/js/40.aa39c874.js"><link rel="prefetch" href="/assets/js/41.d66c6244.js"><link rel="prefetch" href="/assets/js/42.4286b8e6.js"><link rel="prefetch" href="/assets/js/43.7a154d18.js"><link rel="prefetch" href="/assets/js/44.fdf6ead9.js"><link rel="prefetch" href="/assets/js/46.c983d29c.js"><link rel="prefetch" href="/assets/js/47.dd8e070b.js"><link rel="prefetch" href="/assets/js/48.a24bfa4d.js"><link rel="prefetch" href="/assets/js/49.f62fd2ed.js"><link rel="prefetch" href="/assets/js/5.bd239b8e.js"><link rel="prefetch" href="/assets/js/50.b1d9827b.js"><link rel="prefetch" href="/assets/js/51.38556f04.js"><link rel="prefetch" href="/assets/js/52.8d3e710e.js"><link rel="prefetch" href="/assets/js/53.a1493c40.js"><link rel="prefetch" href="/assets/js/54.6f02eae8.js"><link rel="prefetch" href="/assets/js/55.67578cce.js"><link rel="prefetch" href="/assets/js/56.c50a8b8d.js"><link rel="prefetch" href="/assets/js/57.5d222f70.js"><link rel="prefetch" href="/assets/js/58.620e2d71.js"><link rel="prefetch" href="/assets/js/59.148cd283.js"><link rel="prefetch" href="/assets/js/6.c24fad1c.js"><link rel="prefetch" href="/assets/js/60.30f918a7.js"><link rel="prefetch" href="/assets/js/61.74c48c82.js"><link rel="prefetch" href="/assets/js/62.634d3aaf.js"><link rel="prefetch" href="/assets/js/63.e356fa66.js"><link rel="prefetch" href="/assets/js/64.26b30be6.js"><link rel="prefetch" href="/assets/js/65.62d70c41.js"><link rel="prefetch" href="/assets/js/66.1e400eee.js"><link rel="prefetch" href="/assets/js/67.ffab507b.js"><link rel="prefetch" href="/assets/js/68.1d05ca19.js"><link rel="prefetch" href="/assets/js/69.1c1fd4fb.js"><link rel="prefetch" href="/assets/js/7.44b5c637.js"><link rel="prefetch" href="/assets/js/70.423c4573.js"><link rel="prefetch" href="/assets/js/71.7ad35cd2.js"><link rel="prefetch" href="/assets/js/72.0760c94d.js"><link rel="prefetch" href="/assets/js/73.337bd016.js"><link rel="prefetch" href="/assets/js/74.a1987330.js"><link rel="prefetch" href="/assets/js/75.4855cae4.js"><link rel="prefetch" href="/assets/js/76.4b830a3d.js"><link rel="prefetch" href="/assets/js/77.8015a611.js"><link rel="prefetch" href="/assets/js/78.27d34d79.js"><link rel="prefetch" href="/assets/js/79.a6e63e86.js"><link rel="prefetch" href="/assets/js/8.93640005.js"><link rel="prefetch" href="/assets/js/80.0b1a47f0.js"><link rel="prefetch" href="/assets/js/81.934cabc6.js"><link rel="prefetch" href="/assets/js/82.813e508d.js"><link rel="prefetch" href="/assets/js/83.2412f429.js"><link rel="prefetch" href="/assets/js/84.35773649.js"><link rel="prefetch" href="/assets/js/85.8071d88a.js"><link rel="prefetch" href="/assets/js/86.80002fa3.js"><link rel="prefetch" href="/assets/js/9.0dd6c129.js"><link rel="prefetch" href="/assets/js/vendors~flowchart.9e4d2f05.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.c9ce0550.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container" data-v-1156296a><div data-v-1156296a><div id="loader-wrapper" class="loading-wrapper" data-v-d48f4d20 data-v-1156296a data-v-1156296a><div class="loader-main" data-v-d48f4d20><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-4e82dffc data-v-1156296a data-v-1156296a><h3 class="title" data-v-4e82dffc data-v-4e82dffc>文档中心</h3> <p class="description" data-v-4e82dffc data-v-4e82dffc></p> <label id="box" class="inputBox" data-v-4e82dffc data-v-4e82dffc><input type="password" value="" data-v-4e82dffc> <span data-v-4e82dffc>Konck! Knock!</span> <button data-v-4e82dffc>OK</button></label> <div class="footer" data-v-4e82dffc data-v-4e82dffc><span data-v-4e82dffc><i class="iconfont reco-theme" data-v-4e82dffc></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-4e82dffc>vuePress-theme-reco</a></span> <span data-v-4e82dffc><i class="iconfont reco-copyright" data-v-4e82dffc></i> <a data-v-4e82dffc><span data-v-4e82dffc>webkong</span>
+            
+          <!---->
+          2021
+        </a></span></div></div> <div class="hide" data-v-1156296a><header class="navbar" data-v-1156296a><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">文档中心</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      基础&amp;概念
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Basics/javascript/" class="nav-link router-link-active"><i class="undefined"></i>
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/Basics/css/css.html" class="nav-link"><i class="undefined"></i>
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/Basics/glossary/glossary.html" class="nav-link"><i class="undefined"></i>
+  术语表
+</a></li><li class="dropdown-item"><!----> <a href="/Basics/designMode/" class="nav-link"><i class="undefined"></i>
+  设计模式
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      前端框架
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/MVVM/vue/" class="nav-link"><i class="undefined"></i>
+  Vue.js
+</a></li></ul></div></div><div class="nav-item"><a href="/NodeJS/node.html" class="nav-link"><i class="undefined"></i>
+  NodeJS
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      工程化
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Engineering/webpack/" class="nav-link"><i class="undefined"></i>
+  WebPack
+</a></li><li class="dropdown-item"><!----> <a href="/Engineering/git/" class="nav-link"><i class="undefined"></i>
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/Engineering/nginx/nginx-hide.html" class="nav-link"><i class="undefined"></i>
+  Nginx
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      进阶
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Advance/algorithm/" class="nav-link"><i class="undefined"></i>
+  算法&amp;数据结构
+</a></li><li class="dropdown-item"><!----> <a href="/Advance/network/" class="nav-link"><i class="undefined"></i>
+  网络&amp;安全
+</a></li><li class="dropdown-item"><!----> <a href="/Advance/chrome/" class="nav-link"><i class="undefined"></i>
+  Chrome
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      语言
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Languages/lua/lua.html" class="nav-link"><i class="undefined"></i>
+  Lua
+</a></li><li class="dropdown-item"><!----> <a href="/Languages/swift/swift.html" class="nav-link"><i class="undefined"></i>
+  Swift
+</a></li><li class="dropdown-item"><!----> <a href="/Languages/python/python.html" class="nav-link"><i class="undefined"></i>
+  Python
+</a></li></ul></div></div><div class="nav-item"><a href="/Other/any-connect.html" class="nav-link"><i class="undefined"></i>
+  杂项
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  TimeLine
+</a></div> <a href="https://github.com/webkong/wiki.webkong.cn" target="_blank" rel="noopener noreferrer" class="repo-link"><i class="iconfont reco-github"></i>
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask" data-v-1156296a></div> <aside class="sidebar" data-v-1156296a><div class="personal-info-wrapper" data-v-828910c6 data-v-1156296a><!----> <h3 class="name" data-v-828910c6>
+    webkong
+  </h3> <div class="num" data-v-828910c6><div data-v-828910c6><h3 data-v-828910c6>72</h3> <h6 data-v-828910c6>Articles</h6></div> <div data-v-828910c6><h3 data-v-828910c6>15</h3> <h6 data-v-828910c6>Tags</h6></div></div> <ul class="social-links" data-v-828910c6><li class="social-item" data-v-828910c6><i class="iconfont reco-github" style="color:#f47e60;" data-v-828910c6></i></li><li class="social-item" data-v-828910c6><i class="iconfont reco-npm" style="color:#3498db;" data-v-828910c6></i></li></ul> <hr data-v-828910c6></div> <nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      基础&amp;概念
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Basics/javascript/" class="nav-link router-link-active"><i class="undefined"></i>
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/Basics/css/css.html" class="nav-link"><i class="undefined"></i>
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/Basics/glossary/glossary.html" class="nav-link"><i class="undefined"></i>
+  术语表
+</a></li><li class="dropdown-item"><!----> <a href="/Basics/designMode/" class="nav-link"><i class="undefined"></i>
+  设计模式
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      前端框架
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/MVVM/vue/" class="nav-link"><i class="undefined"></i>
+  Vue.js
+</a></li></ul></div></div><div class="nav-item"><a href="/NodeJS/node.html" class="nav-link"><i class="undefined"></i>
+  NodeJS
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      工程化
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Engineering/webpack/" class="nav-link"><i class="undefined"></i>
+  WebPack
+</a></li><li class="dropdown-item"><!----> <a href="/Engineering/git/" class="nav-link"><i class="undefined"></i>
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/Engineering/nginx/nginx-hide.html" class="nav-link"><i class="undefined"></i>
+  Nginx
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      进阶
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Advance/algorithm/" class="nav-link"><i class="undefined"></i>
+  算法&amp;数据结构
+</a></li><li class="dropdown-item"><!----> <a href="/Advance/network/" class="nav-link"><i class="undefined"></i>
+  网络&amp;安全
+</a></li><li class="dropdown-item"><!----> <a href="/Advance/chrome/" class="nav-link"><i class="undefined"></i>
+  Chrome
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      语言
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Languages/lua/lua.html" class="nav-link"><i class="undefined"></i>
+  Lua
+</a></li><li class="dropdown-item"><!----> <a href="/Languages/swift/swift.html" class="nav-link"><i class="undefined"></i>
+  Swift
+</a></li><li class="dropdown-item"><!----> <a href="/Languages/python/python.html" class="nav-link"><i class="undefined"></i>
+  Python
+</a></li></ul></div></div><div class="nav-item"><a href="/Other/any-connect.html" class="nav-link"><i class="undefined"></i>
+  杂项
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  TimeLine
+</a></div> <a href="https://github.com/webkong/wiki.webkong.cn" target="_blank" rel="noopener noreferrer" class="repo-link"><i class="iconfont reco-github"></i>
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav> <ul class="sidebar-links"><li><a href="/Basics/javascript/" aria-current="page" class="sidebar-link">JavaScript</a></li><li><a href="/Basics/javascript/js-hard-type-conversion.html" aria-current="page" class="active sidebar-link">JavaScript强制类型转换</a></li><li><a href="/Basics/javascript/js-liandeng.html" class="sidebar-link">JavaScript连等赋值</a></li><li><a href="/Basics/javascript/js-soft-type-conversion.html" class="sidebar-link">JavaScript隐式转换</a></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>函数式编程</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-4e82dffc data-v-1156296a><h3 class="title" data-v-4e82dffc data-v-4e82dffc>JavaScript强制类型转换</h3> <!----> <label id="box" class="inputBox" data-v-4e82dffc data-v-4e82dffc><input type="password" value="" data-v-4e82dffc> <span data-v-4e82dffc>Konck! Knock!</span> <button data-v-4e82dffc>OK</button></label> <div class="footer" data-v-4e82dffc data-v-4e82dffc><span data-v-4e82dffc><i class="iconfont reco-theme" data-v-4e82dffc></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-4e82dffc>vuePress-theme-reco</a></span> <span data-v-4e82dffc><i class="iconfont reco-copyright" data-v-4e82dffc></i> <a data-v-4e82dffc><span data-v-4e82dffc>webkong</span>
+            
+          <!---->
+          2021
+        </a></span></div></div> <div data-v-1156296a><main class="page" style="padding-right:0;"><section><div class="page-title"><h1 class="title">JavaScript强制类型转换</h1> <div data-v-1ff7123e><i class="iconfont reco-account" data-v-1ff7123e><span data-v-1ff7123e>webkong</span></i> <i class="iconfont reco-date" data-v-1ff7123e><span data-v-1ff7123e>1/24/2016</span></i> <!----> <i class="tags iconfont reco-tag" data-v-1ff7123e><span class="tag-item" data-v-1ff7123e>JavaScript</span></i></div></div> <div class="theme-reco-content content__default"><p>Javascript 的变量是松散类型的，它可以存储 Javascript 支持的任何数据类型，其变量的类型可以在运行时被动态改变。</p> <p>正因为 Javascript 中变量类型具有动态性，在程序实际执行的过程中就需要用到类型转换的概念。类型转换可以分为隐式转换和显式转换，所谓隐 式转换即程序在运行时进行的自动转换，显式转换则是人为的对类型进行强制转换。</p> <blockquote><p>Javascript 提供了以下转型函数：
+转换为数值类型：Number(mix)、parseInt(string,radix)、parseFloat(string)
+转换为字符串类型：toString(radix)、String(mix)
+转换为布尔类型：Boolean(mix)</p></blockquote> <ul><li>Number(mix)函数，可以将任意类型的参数 mix 转换为数值类型。其规则为：</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>  Boolean-&gt;Number : true,false --&gt; 1,0
+  Number-&gt;Number : 返回其本身
+  undefined-&gt;Number : undefined --&gt; NaN
+  String-&gt;Number :
+    + 如果字符串中只包含数字，则将其转换为十进制（忽略前导0）
+    + 如果字符串中包含有效的浮点格式，将其转换为浮点数值（忽略前导0）
+    + 如果是空字符串，将其转换为0
+    + 如果字符串中包含非以上格式，则将其转换为NaN
+    + 如果是对象，则调用对象的valueOf()方法，然后依据前面的规则转换返回的值。如果转换的结果是NaN，则调用对象的toString()方法，再次依照前面的规则转换返回的字符串值。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><div class="language- extra-class"><pre><code>下表列出了对象的valueOf()的返回值：
+</code></pre></div><table><thead><tr><th>对象</th> <th style="text-align:center;">返回值</th></tr></thead> <tbody><tr><td>Array</td> <td style="text-align:center;">数组的元素被转换为字符串，这些字符串由逗号分隔，连接在一起。其操作与 Array.toString 和 Array.join 方法相同。</td></tr> <tr><td>Boolean</td> <td style="text-align:center;">Boolean 值。</td></tr> <tr><td>Date</td> <td style="text-align:center;">存储的时间是从 1970 年 1 月 1 日午夜开始计的毫秒数 UTC。</td></tr> <tr><td>Function</td> <td style="text-align:center;">函数本身。</td></tr> <tr><td>Number</td> <td style="text-align:center;">数字值。</td></tr> <tr><td>Object</td> <td style="text-align:center;">对象本身。这是默认情况。</td></tr> <tr><td>String</td> <td style="text-align:center;">字符串值。</td></tr></tbody></table> <ul><li>parseInt(string, radix)函数，将字符串转换为整数类型的数值。它也有一定的规则：</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code> 忽略字符串前面的空格，直至找到第一个非空字符
+ 如果第一个字符不是数字符号或者负号，返回NaN
+ 如果第一个字符是数字，则继续解析直至字符串解析完毕或者遇到一个非数字符号为止
+ 如果上步解析的结果以0开头，则将其当作八进制来解析；如果以0x开头，则将其当作十六进制来解析
+ 如果指定radix参数，则以radix为基数进行解析
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><ul><li>parseFloat(string)函数，将字符串转换为浮点数类型的数值。</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>  它的规则与parseInt基本相同，但也有点区别：
+  字符串中第一个小数点符号是有效的，另外parseFloat会忽略所有前导0，如果字符串包含一个可解析为整数的数，则返回整数值而不是浮点数值。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><ul><li>toString(radix)方法。除 undefined 和 null 之外的所有类型的值都具有 toString()方法，其作用是返回对象的字符串表示。</li></ul> <table><thead><tr><th>对象</th> <th style="text-align:center;">操作</th></tr></thead> <tbody><tr><td>Array</td> <td style="text-align:center;">将 Array 的元素转换为字符串。结果字符串由逗号分隔，且连接起来。</td></tr> <tr><td>Boolean</td> <td style="text-align:center;">如果 Boolean 值是 true，则返回 “true”。否则，返回 “false”。</td></tr> <tr><td>Date</td> <td style="text-align:center;">返回日期的文字表示法。</td></tr> <tr><td>Error</td> <td style="text-align:center;">返回一个包含相关错误信息的字符串。</td></tr> <tr><td>Function</td> <td style="text-align:center;">返回如下格式的字符串，其中 functionname 是被调用 toString 方法函数的名称：</td></tr> <tr><td>function</td> <td style="text-align:center;">functionname( ) { [native code] }</td></tr> <tr><td>Number</td> <td style="text-align:center;">返回数字的文字表示。</td></tr> <tr><td>String</td> <td style="text-align:center;">返回 String 对象的值。</td></tr></tbody></table> <p>默认 返回 “[object objectname]”，其中 objectname 是对象类型的名称。</p> <ul><li>String(mix)函数，将任何类型的值转换为字符串，其规则为：</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>如果有toString()方法，则调用该方法（不传递radix参数）并返回结果
+如果是null，返回”null”
+如果是undefined，返回”undefined”
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><ul><li>Boolean(mix)函数，将任何类型的值转换为布尔值。</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>以下值会被转换为false：fals* ”&quot;、0、NaN、null、undefined，其余任何值都会被转换为true。
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div></div></section> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">最后更新时间: </span> <span class="time">3/12/2021, 10:45:12 AM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev"><a href="/Basics/javascript/" class="prev router-link-active">
+            JavaScript
+          </a></span> <span class="next"><a href="/Basics/javascript/js-liandeng.html">
+            JavaScript连等赋值
+          </a></span></p></div> <div class="comments-wrapper"><!----></div> <ul class="side-bar sub-sidebar-wrapper" style="width:0;" data-v-70334359></ul></main> <!----></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div><!----><!----></div></div>
+    <script src="/assets/js/app.0a650b2c.js" defer></script><script src="/assets/js/4.96480d4c.js" defer></script><script src="/assets/js/1.5a7058d1.js" defer></script><script src="/assets/js/45.0dd7f5a5.js" defer></script><script src="/assets/js/13.ef3d5a35.js" defer></script>
+  </body>
+</html>

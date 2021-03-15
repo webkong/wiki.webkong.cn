@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Lua基础 | 文档中心</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="../favicon.ico">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon-152x152.png">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="msapplication-TileImage" content="/icons/msapplication-icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#000000">
+    
+    <link rel="preload" href="/assets/css/0.styles.c9ce0550.css" as="style"><link rel="preload" href="/assets/js/app.0a650b2c.js" as="script"><link rel="preload" href="/assets/js/4.96480d4c.js" as="script"><link rel="preload" href="/assets/js/1.5a7058d1.js" as="script"><link rel="preload" href="/assets/js/58.620e2d71.js" as="script"><link rel="preload" href="/assets/js/13.ef3d5a35.js" as="script"><link rel="prefetch" href="/assets/js/10.b920c37e.js"><link rel="prefetch" href="/assets/js/11.845ce65b.js"><link rel="prefetch" href="/assets/js/12.43a5e678.js"><link rel="prefetch" href="/assets/js/14.0d425186.js"><link rel="prefetch" href="/assets/js/15.0df21d26.js"><link rel="prefetch" href="/assets/js/16.7a98ef9d.js"><link rel="prefetch" href="/assets/js/17.189d00e2.js"><link rel="prefetch" href="/assets/js/18.5ed828ac.js"><link rel="prefetch" href="/assets/js/19.ee37572a.js"><link rel="prefetch" href="/assets/js/20.858141db.js"><link rel="prefetch" href="/assets/js/21.03ef384e.js"><link rel="prefetch" href="/assets/js/22.a5df63bd.js"><link rel="prefetch" href="/assets/js/23.db2d5032.js"><link rel="prefetch" href="/assets/js/24.6bf9bc51.js"><link rel="prefetch" href="/assets/js/25.982349b6.js"><link rel="prefetch" href="/assets/js/26.7e53e540.js"><link rel="prefetch" href="/assets/js/27.6217f995.js"><link rel="prefetch" href="/assets/js/28.185fd248.js"><link rel="prefetch" href="/assets/js/29.21fc3051.js"><link rel="prefetch" href="/assets/js/30.24322d5d.js"><link rel="prefetch" href="/assets/js/31.e3239af7.js"><link rel="prefetch" href="/assets/js/32.ec653209.js"><link rel="prefetch" href="/assets/js/33.bd090f45.js"><link rel="prefetch" href="/assets/js/34.4df87c5e.js"><link rel="prefetch" href="/assets/js/35.03954ead.js"><link rel="prefetch" href="/assets/js/36.81dbf7f7.js"><link rel="prefetch" href="/assets/js/37.5c4393d3.js"><link rel="prefetch" href="/assets/js/38.bdaba52a.js"><link rel="prefetch" href="/assets/js/39.6f48c173.js"><link rel="prefetch" href="/assets/js/40.aa39c874.js"><link rel="prefetch" href="/assets/js/41.d66c6244.js"><link rel="prefetch" href="/assets/js/42.4286b8e6.js"><link rel="prefetch" href="/assets/js/43.7a154d18.js"><link rel="prefetch" href="/assets/js/44.fdf6ead9.js"><link rel="prefetch" href="/assets/js/45.0dd7f5a5.js"><link rel="prefetch" href="/assets/js/46.c983d29c.js"><link rel="prefetch" href="/assets/js/47.dd8e070b.js"><link rel="prefetch" href="/assets/js/48.a24bfa4d.js"><link rel="prefetch" href="/assets/js/49.f62fd2ed.js"><link rel="prefetch" href="/assets/js/5.bd239b8e.js"><link rel="prefetch" href="/assets/js/50.b1d9827b.js"><link rel="prefetch" href="/assets/js/51.38556f04.js"><link rel="prefetch" href="/assets/js/52.8d3e710e.js"><link rel="prefetch" href="/assets/js/53.a1493c40.js"><link rel="prefetch" href="/assets/js/54.6f02eae8.js"><link rel="prefetch" href="/assets/js/55.67578cce.js"><link rel="prefetch" href="/assets/js/56.c50a8b8d.js"><link rel="prefetch" href="/assets/js/57.5d222f70.js"><link rel="prefetch" href="/assets/js/59.148cd283.js"><link rel="prefetch" href="/assets/js/6.c24fad1c.js"><link rel="prefetch" href="/assets/js/60.30f918a7.js"><link rel="prefetch" href="/assets/js/61.74c48c82.js"><link rel="prefetch" href="/assets/js/62.634d3aaf.js"><link rel="prefetch" href="/assets/js/63.e356fa66.js"><link rel="prefetch" href="/assets/js/64.26b30be6.js"><link rel="prefetch" href="/assets/js/65.62d70c41.js"><link rel="prefetch" href="/assets/js/66.1e400eee.js"><link rel="prefetch" href="/assets/js/67.ffab507b.js"><link rel="prefetch" href="/assets/js/68.1d05ca19.js"><link rel="prefetch" href="/assets/js/69.1c1fd4fb.js"><link rel="prefetch" href="/assets/js/7.44b5c637.js"><link rel="prefetch" href="/assets/js/70.423c4573.js"><link rel="prefetch" href="/assets/js/71.7ad35cd2.js"><link rel="prefetch" href="/assets/js/72.0760c94d.js"><link rel="prefetch" href="/assets/js/73.337bd016.js"><link rel="prefetch" href="/assets/js/74.a1987330.js"><link rel="prefetch" href="/assets/js/75.4855cae4.js"><link rel="prefetch" href="/assets/js/76.4b830a3d.js"><link rel="prefetch" href="/assets/js/77.8015a611.js"><link rel="prefetch" href="/assets/js/78.27d34d79.js"><link rel="prefetch" href="/assets/js/79.a6e63e86.js"><link rel="prefetch" href="/assets/js/8.93640005.js"><link rel="prefetch" href="/assets/js/80.0b1a47f0.js"><link rel="prefetch" href="/assets/js/81.934cabc6.js"><link rel="prefetch" href="/assets/js/82.813e508d.js"><link rel="prefetch" href="/assets/js/83.2412f429.js"><link rel="prefetch" href="/assets/js/84.35773649.js"><link rel="prefetch" href="/assets/js/85.8071d88a.js"><link rel="prefetch" href="/assets/js/86.80002fa3.js"><link rel="prefetch" href="/assets/js/9.0dd6c129.js"><link rel="prefetch" href="/assets/js/vendors~flowchart.9e4d2f05.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.c9ce0550.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container" data-v-1156296a><div data-v-1156296a><div id="loader-wrapper" class="loading-wrapper" data-v-d48f4d20 data-v-1156296a data-v-1156296a><div class="loader-main" data-v-d48f4d20><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-4e82dffc data-v-1156296a data-v-1156296a><h3 class="title" data-v-4e82dffc data-v-4e82dffc>文档中心</h3> <p class="description" data-v-4e82dffc data-v-4e82dffc></p> <label id="box" class="inputBox" data-v-4e82dffc data-v-4e82dffc><input type="password" value="" data-v-4e82dffc> <span data-v-4e82dffc>Konck! Knock!</span> <button data-v-4e82dffc>OK</button></label> <div class="footer" data-v-4e82dffc data-v-4e82dffc><span data-v-4e82dffc><i class="iconfont reco-theme" data-v-4e82dffc></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-4e82dffc>vuePress-theme-reco</a></span> <span data-v-4e82dffc><i class="iconfont reco-copyright" data-v-4e82dffc></i> <a data-v-4e82dffc><span data-v-4e82dffc>webkong</span>
+            
+          <!---->
+          2021
+        </a></span></div></div> <div class="hide" data-v-1156296a><header class="navbar" data-v-1156296a><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">文档中心</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      基础&amp;概念
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Basics/javascript/" class="nav-link"><i class="undefined"></i>
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/Basics/css/css.html" class="nav-link"><i class="undefined"></i>
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/Basics/glossary/glossary.html" class="nav-link"><i class="undefined"></i>
+  术语表
+</a></li><li class="dropdown-item"><!----> <a href="/Basics/designMode/" class="nav-link"><i class="undefined"></i>
+  设计模式
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      前端框架
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/MVVM/vue/" class="nav-link"><i class="undefined"></i>
+  Vue.js
+</a></li></ul></div></div><div class="nav-item"><a href="/NodeJS/node.html" class="nav-link"><i class="undefined"></i>
+  NodeJS
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      工程化
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Engineering/webpack/" class="nav-link"><i class="undefined"></i>
+  WebPack
+</a></li><li class="dropdown-item"><!----> <a href="/Engineering/git/" class="nav-link"><i class="undefined"></i>
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/Engineering/nginx/nginx-hide.html" class="nav-link"><i class="undefined"></i>
+  Nginx
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      进阶
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Advance/algorithm/" class="nav-link"><i class="undefined"></i>
+  算法&amp;数据结构
+</a></li><li class="dropdown-item"><!----> <a href="/Advance/network/" class="nav-link"><i class="undefined"></i>
+  网络&amp;安全
+</a></li><li class="dropdown-item"><!----> <a href="/Advance/chrome/" class="nav-link"><i class="undefined"></i>
+  Chrome
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      语言
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Languages/lua/lua.html" aria-current="page" class="nav-link router-link-exact-active router-link-active"><i class="undefined"></i>
+  Lua
+</a></li><li class="dropdown-item"><!----> <a href="/Languages/swift/swift.html" class="nav-link"><i class="undefined"></i>
+  Swift
+</a></li><li class="dropdown-item"><!----> <a href="/Languages/python/python.html" class="nav-link"><i class="undefined"></i>
+  Python
+</a></li></ul></div></div><div class="nav-item"><a href="/Other/any-connect.html" class="nav-link"><i class="undefined"></i>
+  杂项
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  TimeLine
+</a></div> <a href="https://github.com/webkong/wiki.webkong.cn" target="_blank" rel="noopener noreferrer" class="repo-link"><i class="iconfont reco-github"></i>
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask" data-v-1156296a></div> <aside class="sidebar" data-v-1156296a><div class="personal-info-wrapper" data-v-828910c6 data-v-1156296a><!----> <h3 class="name" data-v-828910c6>
+    webkong
+  </h3> <div class="num" data-v-828910c6><div data-v-828910c6><h3 data-v-828910c6>72</h3> <h6 data-v-828910c6>Articles</h6></div> <div data-v-828910c6><h3 data-v-828910c6>15</h3> <h6 data-v-828910c6>Tags</h6></div></div> <ul class="social-links" data-v-828910c6><li class="social-item" data-v-828910c6><i class="iconfont reco-github" style="color:#f47e60;" data-v-828910c6></i></li><li class="social-item" data-v-828910c6><i class="iconfont reco-npm" style="color:#3498db;" data-v-828910c6></i></li></ul> <hr data-v-828910c6></div> <nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      基础&amp;概念
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Basics/javascript/" class="nav-link"><i class="undefined"></i>
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/Basics/css/css.html" class="nav-link"><i class="undefined"></i>
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/Basics/glossary/glossary.html" class="nav-link"><i class="undefined"></i>
+  术语表
+</a></li><li class="dropdown-item"><!----> <a href="/Basics/designMode/" class="nav-link"><i class="undefined"></i>
+  设计模式
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      前端框架
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/MVVM/vue/" class="nav-link"><i class="undefined"></i>
+  Vue.js
+</a></li></ul></div></div><div class="nav-item"><a href="/NodeJS/node.html" class="nav-link"><i class="undefined"></i>
+  NodeJS
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      工程化
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Engineering/webpack/" class="nav-link"><i class="undefined"></i>
+  WebPack
+</a></li><li class="dropdown-item"><!----> <a href="/Engineering/git/" class="nav-link"><i class="undefined"></i>
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/Engineering/nginx/nginx-hide.html" class="nav-link"><i class="undefined"></i>
+  Nginx
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      进阶
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Advance/algorithm/" class="nav-link"><i class="undefined"></i>
+  算法&amp;数据结构
+</a></li><li class="dropdown-item"><!----> <a href="/Advance/network/" class="nav-link"><i class="undefined"></i>
+  网络&amp;安全
+</a></li><li class="dropdown-item"><!----> <a href="/Advance/chrome/" class="nav-link"><i class="undefined"></i>
+  Chrome
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      语言
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/Languages/lua/lua.html" aria-current="page" class="nav-link router-link-exact-active router-link-active"><i class="undefined"></i>
+  Lua
+</a></li><li class="dropdown-item"><!----> <a href="/Languages/swift/swift.html" class="nav-link"><i class="undefined"></i>
+  Swift
+</a></li><li class="dropdown-item"><!----> <a href="/Languages/python/python.html" class="nav-link"><i class="undefined"></i>
+  Python
+</a></li></ul></div></div><div class="nav-item"><a href="/Other/any-connect.html" class="nav-link"><i class="undefined"></i>
+  杂项
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  TimeLine
+</a></div> <a href="https://github.com/webkong/wiki.webkong.cn" target="_blank" rel="noopener noreferrer" class="repo-link"><i class="iconfont reco-github"></i>
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav> <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Lua</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/Languages/lua/lua-file.html" class="sidebar-link">Lua基础-文件库</a></li><li><a href="/Languages/lua/lua-math.html" class="sidebar-link">Lua基础-数学库</a></li><li><a href="/Languages/lua/lua-module.html" class="sidebar-link">Lua基础-模块</a></li><li><a href="/Languages/lua/lua-string.html" class="sidebar-link">Lua基础-String库</a></li><li><a href="/Languages/lua/lua-table.html" class="sidebar-link">Lua基础-table库</a></li><li><a href="/Languages/lua/lua.html" aria-current="page" class="active sidebar-link">Lua基础</a></li></ul></section></li></ul> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-4e82dffc data-v-1156296a><h3 class="title" data-v-4e82dffc data-v-4e82dffc>Lua基础</h3> <!----> <label id="box" class="inputBox" data-v-4e82dffc data-v-4e82dffc><input type="password" value="" data-v-4e82dffc> <span data-v-4e82dffc>Konck! Knock!</span> <button data-v-4e82dffc>OK</button></label> <div class="footer" data-v-4e82dffc data-v-4e82dffc><span data-v-4e82dffc><i class="iconfont reco-theme" data-v-4e82dffc></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-4e82dffc>vuePress-theme-reco</a></span> <span data-v-4e82dffc><i class="iconfont reco-copyright" data-v-4e82dffc></i> <a data-v-4e82dffc><span data-v-4e82dffc>webkong</span>
+            
+          <!---->
+          2021
+        </a></span></div></div> <div data-v-1156296a><main class="page"><section><div class="page-title"><h1 class="title">Lua基础</h1> <div data-v-1ff7123e><i class="iconfont reco-account" data-v-1ff7123e><span data-v-1ff7123e>webkong</span></i> <i class="iconfont reco-date" data-v-1ff7123e><span data-v-1ff7123e>9/28/2016</span></i> <!----> <!----></div></div> <div class="theme-reco-content content__default"><h3 id="lua-基础数据类型"><a href="#lua-基础数据类型" class="header-anchor">#</a> Lua 基础数据类型</h3> <h4 id="nil"><a href="#nil" class="header-anchor">#</a> nil</h4> <p>nil 是一种类型，Lua 将 nil 用于表示“无效值”。一个变量在第一次赋值前的默认值是 nil，将 nil 赋予给一个全局变量就等同于删除它。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>local num
+print(num)        --&gt;output:nil
+
+num = 10
+print(num)        --&gt;output:10
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><h4 id="boolean"><a href="#boolean" class="header-anchor">#</a> boolean</h4> <p>布尔类型，可选值 true/false；Lua 中 nil 和 false 为“假”，其它所有值均为“真”。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>local a = true
+local b = 0
+local c = nil
+if a then
+    print(&quot;a&quot;)        --&gt;output:a
+else
+    print(&quot;not a&quot;)    --这个没有执行
+end
+
+if b then
+    print(&quot;b&quot;)        --&gt;output:b
+else
+    print(&quot;not b&quot;)    --这个没有执行
+end
+
+if c then
+    print(&quot;c&quot;)        --这个没有执行
+else
+    print(&quot;not c&quot;)    --&gt;output:not c
+end
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br></div></div><h4 id="number-数字"><a href="#number-数字" class="header-anchor">#</a> number（数字）</h4> <p>Number 类型用于表示实数，和 C/C++ 里面的 double 类型很类似。可以使用数学函数 <code>math.floor</code>（向下取整）和 <code>math.ceil</code>（向上取整）进行取整操作。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>local order = 3.99
+local score = 98.01
+print(math.floor(order))   --&gt;output:3
+print(math.ceil(score))    --&gt;output:99
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p>一般地，Lua 的 number 类型就是用双精度浮点数来实现的。值得一提的是，LuaJIT 支持所谓的“dual-number”（双数）模式，即 LuaJIT 会根据上下文用整型来存储整数，而用双精度浮点数来存放浮点数。+</p> <p>另外，LuaJIT 还支持“长长整型”的大整数（在 x86_64 体系结构上则是 64 位整数）。例如
+<code>print(9223372036854775807LL - 1) --&gt;output:9223372036854775806LL</code></p> <h4 id="string-字符串"><a href="#string-字符串" class="header-anchor">#</a> String (字符串)</h4> <p>Lua 中有三种方式表示字符串:
+1、使用一对匹配的单引号。例：'hello'。
+2、使用一对匹配的双引号。例：&quot;abclua&quot;。
+3、字符串还可以用一种长括号（即<code>[[ ]]）</code>括起来的方式定义。 我们把两个正的方括号（即<code>[[</code> ）间插入 n 个等号定义为第 n 级正长括号。 就是说，0 级正的长括号写作 <code>[[</code> ， 一级正的长括号写作 <code>[=[</code> ，如此等等。 反的长括号也作类似定义； 举个例子，4 级反的长括号写作 <code>]====]</code> 。 一个长字符串可以由任何一级的正的长括号开始，而由第一个碰到的同级反的长括号结束。 整个词法分析过程将不受分行限制，不处理任何转义符，并且忽略掉任何不同级别的长括号。 这种方式描述的字符串可以包含任何东西，当然本级别的反长括号除外。 例：<code>[[abc\nbc]]</code>，里面的 <code>&quot;\n&quot;</code> 不会被转义。
+另外，Lua 的字符串是不可改变的值，不能像在 c 语言中那样直接修改字符串的某个字符，而是根据修改要求来创建一个新的字符串。Lua 也不能通过下标来访问字符串的某个字符。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>local str1 = 'hello world'
+local str2 = &quot;hello lua&quot;
+local str3 = [[&quot;add\name&quot;,'hello']]
+local str4 = [=[string have a [[]].]=]
+
+print(str1)    --&gt;output:hello world
+print(str2)    --&gt;output:hello lua
+print(str3)    --&gt;output:&quot;add\name&quot;,'hello'
+print(str4)    --&gt;output:string have a [[]].
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><p>在 Lua 实现中，Lua 字符串一般都会经历一个“内化”（intern）的过程，即两个完全一样的 Lua 字符串在 Lua 虚拟机中只会存储一份。每一个 Lua 字符串在创建时都会插入到 Lua 虚拟机内部的一个全局的哈希表中。 这意味着</p> <ol><li>创建相同的 Lua 字符串并不会引入新的动态内存分配操作，所以相对便宜（但仍有全局哈希表查询的开销），</li> <li>内容相同的 Lua 字符串不会占用多份存储空间，</li> <li>已经创建好的 Lua 字符串之间进行相等性比较时是 O(1) 时间度的开销，而不是通常见到的 O(n).</li></ol> <h4 id="table-表"><a href="#table-表" class="header-anchor">#</a> table(表)</h4> <p>Table 类型实现了一种抽象的“关联数组”。“关联数组” 是一种具有特殊索引方式的数组，索引通常是字符串（string）或者 number 类型，但也可以是除 nil 以外的任意类型的值。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>local corp = {
+    web = &quot;www.google.com&quot;,   --索引为字符串，key = &quot;web&quot;,
+                              --            value = &quot;www.google.com&quot;
+    telephone = &quot;12345678&quot;,   --索引为字符串
+    staff = {&quot;Jack&quot;, &quot;Scott&quot;, &quot;Gary&quot;}, --索引为字符串，值也是一个表
+    100876,              --相当于 [1] = 100876，此时索引为数字
+                         --      key = 1, value = 100876
+    100191,              --相当于 [2] = 100191，此时索引为数字
+    [10] = 360,          --直接把数字索引给出
+    [&quot;city&quot;] = &quot;Beijing&quot; --索引为字符串
+}
+
+print(corp.web)               --&gt;output:www.google.com
+print(corp[&quot;telephone&quot;])      --&gt;output:12345678
+print(corp[2])                --&gt;output:100191
+print(corp[&quot;city&quot;])           --&gt;output:&quot;Beijing&quot;
+print(corp.staff[1])          --&gt;output:Jack
+print(corp[10])               --&gt;output:360
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br></div></div><p>在内部实现上，table 通常实现为一个哈希表、一个数组、或者两者的混合。具体的实现为何种形式，动态依赖于具体的 table 的键分布特点。</p> <h4 id="function-函数"><a href="#function-函数" class="header-anchor">#</a> function (函数)</h4> <p>在 Lua 中，函数 也是一种数据类型，函数可以存储在变量中，可以通过参数传递给其他函数，还可以作为其他函数的返回值。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>local function foo()
+    print(&quot;in the function&quot;)
+    --dosomething()
+    local x = 10
+    local y = 20
+    return x + y
+end
+
+local a = foo    --把函数赋给变量
+
+print(a())
+
+--output:
+in the function
+30
+有名函数的定义本质上是匿名函数对变量的赋值。为说明这一点，考虑
+function foo()
+end
+等价于
+
+foo = function ()
+end
+类似地，
+
+local function foo()
+end
+等价于
+
+local foo = function ()
+end
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br></div></div><h3 id="lua-表达式"><a href="#lua-表达式" class="header-anchor">#</a> Lua 表达式</h3> <h4 id="算数表达式"><a href="#算数表达式" class="header-anchor">#</a> 算数表达式</h4> <p><code>+ - * / % ^</code> ^指数</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>print(1 + 2)       --&gt;打印 3
+print(5 / 10)      --&gt;打印 0.5。 这是Lua不同于c语言的
+print(5.0 / 10)    --&gt;打印 0.5。 浮点数相除的结果是浮点数
+-- print(10 / 0)   --&gt;注意除数不能为0，计算的结果会出错
+print(2 ^ 10)      --&gt;打印 1024。 求2的10次方
+
+local num = 1357
+print(num % 2)       --&gt;打印 1
+print((num % 2) == 1) --&gt;打印 true。 判断num是否为奇数
+print((num % 5) == 0)  --&gt;打印 false。判断num是否能被5整数
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><h4 id="关系运算符"><a href="#关系运算符" class="header-anchor">#</a> 关系运算符</h4> <p><code>&lt; &gt; &lt;= &gt;= == ~=</code> ~= 不等于</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>print(1 &lt; 2)    --&gt;打印 true
+print(1 == 2)   --&gt;打印 false
+print(1 ~= 2)   --&gt;打印 true
+local a, b = true, false
+print(a == b)  --&gt;打印 false
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><blockquote><p>在使用“==”做等于判断时，要注意对于 table, userdate 和函数， Lua 是作引用比较的。也就是说，只有当两个变量引用同一个对象时，才认为它们相等。可以看下面的例子：</p></blockquote> <div class="language- line-numbers-mode"><pre class="language-text"><code>local a = { x = 1, y = 0}
+local b = { x = 1, y = 0}
+if a == b then
+  print(&quot;a==b&quot;)
+else
+  print(&quot;a~=b&quot;)
+end
+
+---output:
+a~=b
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><p>由于 Lua 字符串总是会被“内化”，即相同内容的字符串只会被保存一份，因此 Lua 字符串之间的相等性比较可以简化为其内部存储地址的比较。这意味着 Lua 字符串的相等性比较总是为 O(1). 而在其他编程语言中，字符串的相等性比较则通常为 O(n)，即需要逐个字节（或按若干个连续字节）进行比较。</p> <h4 id="逻辑运算符"><a href="#逻辑运算符" class="header-anchor">#</a> 逻辑运算符</h4> <p><code>and or not</code> 与 或 非</p> <p>Lua 中的 and 和 or 是不同于 c 语言的。在 c 语言中，and 和 or 只得到两个值 1 和 0，其中 1 表示真，0 表示假。而 Lua 中 and 的执行过程是这样的：</p> <p><code>a and b</code> 如果 a 为 nil，则返回 a，否则返回 b;
+<code>a or b</code>如果 a 为 nil，则返回 b，否则返回 a。</p> <blockquote><p>所有逻辑操作符将 false 和 nil 视作假，其他任何值视作真，对于 and 和 or，“短路求值”，对于 not，永远只返回 true 或者 false。</p></blockquote> <h4 id="字符串连接"><a href="#字符串连接" class="header-anchor">#</a> 字符串连接</h4> <p>在 Lua 中连接两个字符串，可以使用操作符“..”（两个点）。如果其任意一个操作数是数字的话，Lua 会将这个数字转换成字符串。注意，连接操作符只会创建一个新字符串，而不会改变原操作数。也可以使用 string 库函数 string.format 连接字符串。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>print(&quot;Hello &quot; .. &quot;World&quot;)    --&gt;打印 Hello World
+print(0 .. 1)                 --&gt;打印 01
+
+str1 = string.format(&quot;%s-%s&quot;,&quot;hello&quot;,&quot;world&quot;)
+print(str1)              --&gt;打印 hello-world
+
+str2 = string.format(&quot;%d-%s-%.2f&quot;,123,&quot;world&quot;,1.21)
+print(str2)              --&gt;打印 123-world-1.21
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><p>由于 Lua 字符串本质上是只读的，因此字符串连接运算符几乎总会创建一个新的（更大的）字符串。这意味着如果有很多这样的连接操作（比如在循环中使用 .. 来拼接最终结果），则性能损耗会非常大。在这种情况下，推荐使用 table 和 table.concat() 来进行很多字符串的拼接，例如：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>local pieces = {}
+for i, elem in ipairs(my_list) do
+    pieces[i] = my_process(elem)
+end
+local res = table.concat(pieces)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p>当然，上面的例子还可以使用 LuaJIT 独有的 table.new 来恰当地初始化 pieces 表的空间，以避免该表的动态生长。这个特性我们在后面还会详细讨论。</p> <h4 id="优先级"><a href="#优先级" class="header-anchor">#</a> 优先级</h4> <p>Lua 操作符的优先级如下表所示(从高到低)：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>^
+not # -
+* / %
++ -
+..
+&lt; &gt; &lt;= &gt;= == ~=
+and
+or
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><div class="language- line-numbers-mode"><pre class="language-text"><code>local a, b = 1, 2
+local x, y = 3, 4
+local i = 10
+local res = 0
+res = a + i &lt; b/2 + 1  --&gt;等价于res =  (a + i) &lt; ((b/2) + 1)
+res = 5 + x^2*8        --&gt;等价于res =  5 + ((x^2) * 8)
+res = a &lt; y and y &lt;=x  --&gt;等价于res =  (a &lt; y) and (y &lt;= x)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><p>若不确定某些操作符的优先级，就应显示地用括号来指定运算顺序。这样做还可以提高代码的可读性。</p> <h3 id="lua-的控制结构"><a href="#lua-的控制结构" class="header-anchor">#</a> Lua 的控制结构</h3> <p>流程控制语句对于程序设计来说特别重要，它可以用于设定程序的逻辑结构。一般需要与条件判断语句结合使用。Lua 语言提供的控制结构有 if，while，repeat，for，并提供 break 关键字来满足更丰富的需求。本章主要介绍 Lua 语言的控制结构的使用。</p> <h4 id="if-else"><a href="#if-else" class="header-anchor">#</a> if/else</h4> <p>if-else 是我们熟知的一种控制结构。Lua 跟其他语言一样，提供了 if-else 的控制结构。因为是大家熟悉的语法，本节只简单介绍一下它的使用方法。</p> <h5 id="单个-if-分支"><a href="#单个-if-分支" class="header-anchor">#</a> 单个 if 分支</h5> <div class="language- line-numbers-mode"><pre class="language-text"><code>local x = 10
+if x &gt; 0 then
+  print('x is a positive number')
+end
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><h5 id="两个分支-if-else-型"><a href="#两个分支-if-else-型" class="header-anchor">#</a> 两个分支 if-else 型</h5> <div class="language- line-numbers-mode"><pre class="language-text"><code>x = 10
+if x &gt; 0 then
+    print(&quot;x is a positive number&quot;)
+else
+    print(&quot;x is a non-positive number&quot;)
+end
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><h5 id="多个分支-if-elseif-else"><a href="#多个分支-if-elseif-else" class="header-anchor">#</a> 多个分支 if-elseif-else</h5> <div class="language- line-numbers-mode"><pre class="language-text"><code>local score = 90
+if score == 100 then
+    print(&quot;Very good!Your score is 100&quot;)
+elseif score &gt;= 60 then
+    print(&quot;Congratulations, you have passed it,your score greater or equal to 60&quot;)
+--此处可以添加多个elseif
+else
+    print(&quot;Sorry, you do not pass the exam! &quot;)
+end
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><p>与 C 语言的不同之处是 else 与 if 是连在一起的，若将 else 与 if 写成 &quot;else if&quot; 则相当于在 else 里嵌套另一个 if 语句，如下代码：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>score = 0
+if score == 100 then
+    print(&quot;Very good!Your score is 100&quot;)
+elseif score &gt;= 60 then
+    print(&quot;Congratulations, you have passed it,your score greater or equal to 60&quot;)
+else
+    if score &gt; 0 then
+        print(&quot;Your score is better than 0&quot;)
+    else
+        print(&quot;My God, your score turned out to be 0&quot;)
+    end --与上一示例代码不同的是，此处要添加一个end
+end
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><h4 id="while"><a href="#while" class="header-anchor">#</a> while</h4> <p>Lua 跟其他常见语言一样，提供了 while 控制结构，语法上也没有什么特别的。但是没有提供 do-while 型的控制结构，但是提供了功能相当的 repeat。+</p> <p>while 型控制结构语法如下，当表达式值为假（即 false 或 nil）时结束循环。也可以使用 break 语言提前跳出循环。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>while 表达式 do
+--body
+end
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><blockquote><p>示例代码，求 1 + 2 + 3 + 4 + 5 的结果</p></blockquote> <div class="language- line-numbers-mode"><pre class="language-text"><code>x = 1
+sum = 0
+
+while x &lt;= 5 do
+    sum = sum + x
+    x = x + 1
+end
+print(sum)  --&gt;output 15
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><p>值得一提的是，Lua 并没有像许多其他语言那样提供类似 continue 这样的控制语句用来立即进入下一个循环迭代（如果有的话）。因此，我们需要仔细地安排循环体里的分支，以避免这样的需求。
+没有提供 continue ，却也提供了另外一个标准控制语句 break ，可以跳出当前循环。例如我们遍历 table ，查找值为 11 的数组下标索引：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>local t = {1, 3, 5, 8, 11, 18, 21}
+
+local i
+for i, v in ipairs(t) do
+    if 11 == v then
+        print(&quot;index[&quot; .. i .. &quot;] have right value[11]&quot;)
+        break
+    end
+end
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><h4 id="repeat"><a href="#repeat" class="header-anchor">#</a> repeat</h4> <p>Lua 中的 repeat 控制结构类似于其他语言（如：C++语言）中的 do-while，但是控制方式是刚好相反的。简单点说，执行 repeat 循环体后，直到 until 的条件为真时才结束，而其他语言（如：C++语言）的 do-while 则是当条件为假时就结束循环。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>x = 10
+repeat
+  print(x)
+until true
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p>除此之外，repeat 与其他语言的 do-while 基本是一样的。同样，Lua 中的 repeat 也可以在使用 break 退出。</p> <h4 id="for"><a href="#for" class="header-anchor">#</a> for</h4> <h5 id="for-数字型"><a href="#for-数字型" class="header-anchor">#</a> for 数字型</h5> <blockquote><p>for 语句有两种形式：数字 for（numeric for）和范型 for（generic for）。</p></blockquote> <p>数字型 for 的语法如下：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>for var = begin, finish, step do
+    --body
+end
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>关于数字 for 需要关注以下几点：</p> <ol><li>var 从 begin 变化到 finish，每次变化都以 step 作为步长递增 var</li> <li>begin、 finish、 step 三个表达式只会在循环开始时执行一次</li> <li>第三个表达式 step 是可选的， 默认为 1</li> <li>控制变量 var 的作用域仅在 for 循环内，需要在外面控制，则需将值赋给一个新的变量</li> <li>循环过程中不要改变控制变量的值，那样会带来不可预知的影响</li></ol> <div class="language- line-numbers-mode"><pre class="language-text"><code>for i = 1, 5 do
+  print(i)
+end
+
+-- output:
+1
+2
+3
+4
+5
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><p>如果不想给循环设置上限的话，可以使用常量 math.huge：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>for i = 1, math.huge do
+    if (0.3*i^3 - 20*i^2 - 500 &gt;=0) then
+      print(i)
+      break
+    end
+end
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><h5 id="for-泛型"><a href="#for-泛型" class="header-anchor">#</a> for 泛型</h5> <p>泛型 for 循环通过一个迭代器（iterator）函数来遍历所有值：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>-- 打印数组a的所有值
+local a = {&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;}
+for i, v in ipairs(a) do
+  print(&quot;index:&quot;, i, &quot; value:&quot;, v)
+end
+
+-- output:
+index:  1  value: a
+index:  2  value: b
+index:  3  value: c
+index:  4  value: d
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><p>Lua 的基础库提供了 <code>ipairs</code>，这是一个用于遍历数组的迭代器函数。在每次循环中，i 会被赋予一个索引值，同时 v 被赋予一个对应于该索引的数组元素值。
+下面是另一个类似的示例，演示了如何遍历一个 table 中所有的 key</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>-- 打印table t中所有的key
+for k in pairs(t) do
+    print(k)
+end
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p>从外观上看泛型 for 比较简单，但其实它是非常强大的。通过不同的迭代器，几乎可以遍历所有的东西， 而且写出的代码极具可读性。标准库提供了几种迭代器，包括用于迭代文件中每行的（<code>io.lines</code>）、 迭代 table 元素的（<code>pairs</code>）、迭代数组元素的（<code>ipairs</code>）、迭代字符串中单词的（<code>string.gmatch</code>）等。
+泛型 for 循环与数字型 for 循环有两个相同点：
+（1）循环变量是循环体的局部变量；
+（2）决不应该对循环变量作任何赋值。</p> <p>对于泛型 for 的使用，再来看一个更具体的示例。假设有这样一个 table，它的内容是一周中每天的名称：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>local days = {
+  &quot;Sunday&quot;, &quot;Monday&quot;, &quot;Tuesday&quot;, &quot;Wednesday&quot;,
+  &quot;Thursday&quot;, &quot;Friday&quot;, &quot;Saturday&quot;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p>现在要将一个名称转换成它在一周中的位置。为此，需要根据给定的名称来搜索这个 table。然而 在 Lua 中，通常更有效的方法是创建一个“逆向 table”。例如这个逆向 table 叫 revDays，它以 一周中每天的名称作为索引，位置数字作为值：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>local revDays = {
+   [&quot;Sunday&quot;] = 1,
+   [&quot;Monday&quot;] = 2,
+   [&quot;Tuesday&quot;] = 3,
+   [&quot;Wednesday&quot;] = 4,
+   [&quot;Thursday&quot;] = 5,
+   [&quot;Friday&quot;] = 6,
+   [&quot;Saturday&quot;] = 7
+ }
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><p>接下来，要找出一个名称所对应的需要，只需用名字来索引这个 reverse table 即可：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>local x = &quot;Tuesday&quot;
+print(revDays[x])  --&gt;3
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>当然，不必手动声明这个逆向 table，而是通过原来的 table 自动地构造出这个逆向 table：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>local days = {
+   &quot;Monday&quot;, &quot;Tuesday&quot;, &quot;Wednesday&quot;, &quot;Thursday&quot;,
+   &quot;Friday&quot;, &quot;Saturday&quot;,&quot;Sunday&quot;
+}
+
+local revDays = {}
+for k, v in pairs(days) do
+  revDays[v] = k
+end
+
+-- print value
+for k,v in pairs(revDays) do
+  print(&quot;k:&quot;, k, &quot; v:&quot;, v)
+end
+
+-- output:
+k:  Tuesday   v: 2
+k:  Monday    v: 1
+k:  Sunday    v: 7
+k:  Thursday  v: 4
+k:  Friday    v: 5
+k:  Wednesday v: 3
+k:  Saturday  v: 6
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br></div></div><p>这个循环会为每个元素进行赋值，其中变量 k 为 key(1、2、...)，变量 v 为 value(&quot;Sunday&quot;、&quot;Monday&quot;、...)。
+值得一提的是，在 LuaJIT 2.1 中，ipairs() 内建函数是可以被 JIT 编译的，而 pairs() 则只能被解释执行。因此在性能敏感的场景，应当合理安排数据结构，避免对哈希表进行遍历。事实上，即使未来 pairs 可以被 JIT 编译，哈希表的遍历本身也不会有数组遍历那么高效，毕竟哈希表就不是为遍历而设计的数据结构。</p> <h5 id="break-return"><a href="#break-return" class="header-anchor">#</a> break/return</h5> <p><strong>break</strong></p> <p>语句 break 用来终止 while、repeat 和 for 三种循环的执行，并跳出当前循环体， 继续执行当前循环之后的语句。下面举一个 while 循环中的 break 的例子来说明：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>sum = 0
+i = 1
+while true do
+    sum = sum + i
+    if sum &gt; 100 then
+        break
+    end
+    i = i + 1
+end
+print(&quot;The result is &quot; .. i)  --&gt;output:The result is 14
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><p>在实际应用中，break 经常用于嵌套循环中。</p> <p><strong>return</strong></p> <p>return 主要用于从函数中返回结果，或者用于简单的结束一个函数的执行。</p> <h3 id="lua-函数"><a href="#lua-函数" class="header-anchor">#</a> Lua 函数</h3> <p>在 Lua 中，函数是一种对语句和表达式进行抽象的主要机制。函数既可以完成某项特定的任务，也可以只做一些计算并返回结果。在第一种情况中，一句函数调用被视为一条语句；而在第二种情况中，则将其视为一句表达式。
+示例代码：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>print(&quot;hello world!&quot;)        -- 用 print() 函数输出 hello world！
+local m = math.max(1, 5)     -- 调用数学库函数 max，
+                             -- 用来求 1,5 中的最大值，并返回赋给变量 m
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>使用函数的好处：</p> <p>降低程序的复杂性：把函数作为一个独立的模块，写完函数后，只关心它的功能，而不再考虑函数里面的细节。
+增加程序的可读性：当我们调用 math.max() 函数时，很明显函数是用于求最大值的，实现细节就不关心了。
+避免重复代码：当程序中有相同的代码部分时，可以把这部分写成一个函数，通过调用函数来实现这部分代码的功能，节约空间，减少代码长度。
+隐含局部变量：在函数中使用局部变量，变量的作用范围不会超出函数，这样它就不会给外界带来干扰。</p> <h4 id="函数的定义"><a href="#函数的定义" class="header-anchor">#</a> 函数的定义</h4> <p>Lua 使用关键字 function 定义函数，语法如下：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>function function_name (arc)  -- arc 表示参数列表，函数的参数列表可以为空
+   -- body
+end
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>上面的语法定义了一个全局函数，名为 function_name. 全局函数本质上就是函数类型的值赋给了一个全局变量，即上面的语法等价于</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>function_name = function (arc)
+  -- body
+end
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>由于全局变量一般会污染全局名字空间，同时也有性能损耗（即查询全局环境表的开销），因此我们应当尽量使用“局部函数”，其记法是类似的，只是开头加上 local 修饰符：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>local function function_name (arc)
+  -- body
+end
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>由于函数定义本质上就是变量赋值，而变量的定义总是应放置在变量使用之前，所以函数的定义也需要放置在函数调用之前。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>local function max(a, b)  --定义函数 max，用来求两个数的最大值，并返回
+   local temp = nil       --使用局部变量 temp，保存最大值
+   if(a &gt; b) then
+      temp = a
+   else
+      temp = b
+   end
+   return temp            --返回最大值
+end
+
+local m = max(-12, 20)    --调用函数 max，找去 -12 和 20 中的最大值
+print(m)                  --&gt; output 20
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><p>如果参数列表为空，必须使用 () 表明是函数调用。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>local function func()   --形参为空
+    print(&quot;no parameter&quot;)
+end
+
+func()                  --函数调用，圆扩号不能省
+
+--&gt; output：
+no parameter
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><p>在定义函数要注意几点：</p> <ol><li>利用名字来解释函数、变量的目的，使人通过名字就能看出来函数、变量的作用。</li> <li>每个函数的长度要尽量控制在一个屏幕内，一眼可以看明白。</li> <li>让代码自己说话，不需要注释最好。</li></ol> <p>由于函数定义等价于变量赋值，我们也可以把函数名替换为某个 Lua 表的某个字段，例如</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>function foo.bar(a, b, c)
+    -- body ...
+end
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>此时我们是把一个函数类型的值赋给了 foo 表的 bar 字段。换言之，上面的定义等价于</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>foo.bar = function (a, b, c)
+    print(a, b, c)
+end
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>对于此种形式的函数定义，不能再使用 local 修饰符了，因为不存在定义新的局部变量了。</p> <h4 id="函数的参数"><a href="#函数的参数" class="header-anchor">#</a> 函数的参数</h4> <h5 id="按值传递"><a href="#按值传递" class="header-anchor">#</a> 按值传递</h5> <p>Lua 函数的参数大部分是按值传递的。值传递就是调用函数时，实参把它的值通过赋值运算传递给形参，然后形参的改变和实参就没有关系了。在这个过程中，实参是通过它在参数表中的位置与形参匹配起来的。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>local function swap(a, b) --定义函数swap,函数内部进行交换两个变量的值
+   local temp = a
+   a = b
+   b = temp
+   print(a, b)
+end
+
+local x = &quot;hello&quot;
+local y = 20
+print(x, y)
+swap(x, y)    --调用swap函数
+print(x, y)   --调用swap函数后，x和y的值并没有交换
+
+--&gt;output
+hello 20
+20  hello
+hello 20
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br></div></div><p>在调用函数的时候，若形参个数和实参个数不同时，Lua 会自动调整实参个数。调整规则：若实参个数大于形参个数，从左向右，多余的实参被忽略；若实参个数小于形参个数，从左向右，没有被实参初始化的形参会被初始化为 nil。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>local function fun1(a, b)       --两个形参，多余的实参被忽略掉
+   print(a, b)
+end
+
+local function fun2(a, b, c, d) --四个形参，没有被实参初始化的形参，用nil初始化
+   print(a, b, c, d)
+end
+
+local x = 1
+local y = 2
+local z = 3
+
+fun1(x, y, z)         -- z被函数fun1忽略掉了，参数变成 x, y
+fun2(x, y, z)         -- 后面自动加上一个nil，参数变成 x, y, z, nil
+
+--&gt;output
+1   2
+1   2   3   nil
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br></div></div><h5 id="变长参数"><a href="#变长参数" class="header-anchor">#</a> 变长参数</h5> <p>上面函数的参数都是固定的，其实 Lua 还支持变长参数。若形参为 ... ,示该函数可以接收不同长度的参数。访问参数的时候也要使用 ...</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>local function func( ... )                -- 形参为 ... ,表示函数采用变长参数
+
+   local temp = {...}                     -- 访问的时候也要使用 ...
+   local ans = table.concat(temp, &quot; &quot;)    -- 使用 table.concat 库函数对数
+                                          -- 组内容使用 &quot; &quot; 拼接成字符串。
+   print(ans)
+end
+
+func(1, 2)        -- 传递了两个参数
+func(1, 2, 3, 4)  -- 传递了四个参数
+
+--&gt;output
+1 2
+
+1 2 3 4
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><p>值得一提的是，LuaJIT 2 尚不能 JIT 编译这种变长参数的用法，只能解释执行。所以对性能敏感的代码，应当避免使用此种形式。</p> <h5 id="具名参数-参数是一个-table"><a href="#具名参数-参数是一个-table" class="header-anchor">#</a> 具名参数(参数是一个 table)</h5> <p>Lua 还支持通过名称来指定实参，这时候要把所有的实参组织到一个 table 中，并将这个 table 作为唯一的实参传给函数。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>local function change(arg) -- change 函数，改变长方形的长和宽，使其各增长一倍
+  arg.width = arg.width * 2
+  arg.height = arg.height * 2
+  return arg
+end
+
+local rectangle = { width = 20, height = 15 }
+print(&quot;before change:&quot;, &quot;width  =&quot;, rectangle.width,
+                        &quot;height =&quot;, rectangle.height)
+rectangle = change(rectangle)
+print(&quot;after  change:&quot;, &quot;width  =&quot;, rectangle.width,
+                        &quot;height =&quot;, rectangle.height)
+
+--&gt;output
+before change: width = 20  height =  15
+after  change: width = 40  height =  30
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br></div></div><h5 id="按引用传递"><a href="#按引用传递" class="header-anchor">#</a> 按引用传递</h5> <p>当函数参数是 table 类型时，传递进来的是 实际参数的引用，此时在函数内部对该 table 所做的修改，会直接对调用者所传递的实际参数生效，而无需自己返回结果和让调用者进行赋值。 我们把上面改变长方形长和宽的例子修改一下。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>function change(arg) --change函数，改变长方形的长和宽，使其各增长一倍
+  arg.width = arg.width * 2  --表arg不是表rectangle的拷贝，他们是同一个表
+  arg.height = arg.height * 2
+end                  -- 没有return语句了
+
+local rectangle = { width = 20, height = 15 }
+print(&quot;before change:&quot;, &quot;width = &quot;, rectangle.width,
+                        &quot; height = &quot;, rectangle.height)
+change(rectangle)
+print(&quot;after change:&quot;, &quot;width = &quot;, rectangle.width,
+                       &quot; height =&quot;, rectangle.height)
+
+--&gt; output
+before change: width = 20  height = 15
+after  change: width = 40  height = 30
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><p>在常用基本类型中，除了 table 是按址传递类型外，其它的都是按值传递参数。 用全局变量来代替函数参数的不好编程习惯应该被抵制，良好的编程习惯应该是减少全局变量的使用。</p> <h4 id="函数返回值"><a href="#函数返回值" class="header-anchor">#</a> 函数返回值</h4> <p>Lua 具有一项与众不同的特性，允许函数返回多个值。Lua 的库函数中，有一些就是返回多个值。</p> <blockquote><p>示例代码：使用库函数 string.find，在源字符串中查找目标字符串，若查找成功，则返回目标字符串在源字符串中的起始位置和结束位置的下标。</p></blockquote> <div class="language- line-numbers-mode"><pre class="language-text"><code>local s, e = string.find(&quot;hello world&quot;, &quot;llo&quot;)
+print(s, e)  --&gt;output 3  5
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>返回多个值时，值之间用 “,” 隔开。</p> <blockquote><p>示例代码：定义一个函数，实现两个变量交换值</p></blockquote> <div class="language- line-numbers-mode"><pre class="language-text"><code>local function swap(a, b)   -- 定义函数 swap，实现两个变量交换值
+   return b, a              -- 按相反顺序返回变量的值
+end
+
+local x = 1
+local y = 20
+x, y = swap(x, y)           -- 调用 swap 函数
+print(x, y)                 --&gt; output   20     1
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><p>当函数返回值的个数和接收返回值的变量的个数不一致时，Lua 也会自动调整参数个数。</p> <p>调整规则： 若返回值个数大于接收变量的个数，多余的返回值会被忽略掉； 若返回值个数小于参数个数，从左向右，没有被返回值初始化的变量会被初始化为 nil。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>function init()             --init 函数 返回两个值 1 和 &quot;lua&quot;
+  return 1, &quot;lua&quot;
+end
+
+x = init()
+print(x)
+
+x, y, z = init()
+print(x, y, z)
+
+--output
+1
+1 lua nil
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><p>当一个函数有一个以上返回值，且函数调用不是一个列表表达式的最后一个元素，那么函数调用只会产生一个返回值,也就是第一个返回值。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>local function init()       -- init 函数 返回两个值 1 和 &quot;lua&quot;
+    return 1, &quot;lua&quot;
+end
+
+local x, y, z = init(), 2   -- init 函数的位置不在最后，此时只返回 1
+print(x, y, z)              --&gt;output  1  2  nil
+
+local a, b, c = 2, init()   -- init 函数的位置在最后，此时返回 1 和 &quot;lua&quot;
+print(a, b, c)              --&gt;output  2  1  lua
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><p>函数调用的实参列表也是一个列表表达式。考虑下面的例子：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>local function init()
+    return 1, &quot;lua&quot;
+end
+
+print(init(), 2)   --&gt;output  1  2
+print(2, init())   --&gt;output  2  1  lua
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><p>如果你确保只取函数返回值的第一个值，可以使用括号运算符，例如</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>local function init()
+    return 1, &quot;lua&quot;
+end
+
+print((init()), 2)   --&gt;output  1  2
+print(2, (init()))   --&gt;output  2  1
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><p>值得一提的是，如果实参列表中某个函数会返回多个值，同时调用者又没有显式地使用括号运算符来筛选和过滤，则这样的表达式是不能被 LuaJIT 2 所 JIT 编译的，而只能被解释执行。</p> <h4 id="全动态函数调用"><a href="#全动态函数调用" class="header-anchor">#</a> 全动态函数调用</h4> <p>调用回调函数，并把一个数组参数作为回调函数的参数。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>local args = {...} or {}
+method_name(unpack(args, 1, table.maxn(args)))
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><h5 id="使用场景"><a href="#使用场景" class="header-anchor">#</a> 使用场景</h5> <p>如果你的实参 table 中确定没有 nil 空洞，则可以简化为</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>method_name(unpack(args))
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><ol><li>你要调用的函数参数是未知的；</li> <li>函数的实际参数的类型和数目也都是未知的。</li></ol> <div class="language- line-numbers-mode"><pre class="language-text"><code>add_task(end_time, callback, params)
+
+if os.time() &gt;= endTime then
+    callback(unpack(params, 1, table.maxn(params)))
+end
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p>值得一提的是，unpack 内建函数还不能为 LuaJIT 所 JIT 编译，因此这种用法总是会被解释执行。对性能敏感的代码路径应避免这种用法。</p> <h5 id="小试牛刀"><a href="#小试牛刀" class="header-anchor">#</a> 小试牛刀</h5> <div class="language- line-numbers-mode"><pre class="language-text"><code>local function run(x, y)
+    print('run', x, y)
+end
+
+local function attack(targetId)
+    print('targetId', targetId)
+end
+
+local function do_action(method, ...)
+    local args = {...} or {}
+    method(unpack(args, 1, table.maxn(args)))
+end
+
+do_action(run, 1, 2)         -- output: run 1 2
+do_action(attack, 1111)      -- output: targetId    1111
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><p>来源
+<a href="https://moonbingbing.gitbooks.io/openresty-best-practices/content/lua/class.html" target="_blank" rel="noopener noreferrer">https://moonbingbing.gitbooks.io/openresty-best-practices/content/lua/class.html<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p></div></section> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">最后更新时间: </span> <span class="time">3/12/2021, 10:45:12 AM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev"><a href="/Languages/lua/lua-table.html" class="prev">
+            Lua基础-table库
+          </a></span> <!----></p></div> <div class="comments-wrapper"><!----></div> <ul class="side-bar sub-sidebar-wrapper" style="width:12rem;" data-v-70334359><li class="level-3" data-v-70334359><a href="/Languages/lua/lua.html#lua-基础数据类型" class="sidebar-link reco-side-lua-基础数据类型" data-v-70334359>Lua 基础数据类型</a></li><li class="level-3" data-v-70334359><a href="/Languages/lua/lua.html#lua-表达式" class="sidebar-link reco-side-lua-表达式" data-v-70334359>Lua 表达式</a></li><li class="level-3" data-v-70334359><a href="/Languages/lua/lua.html#lua-的控制结构" class="sidebar-link reco-side-lua-的控制结构" data-v-70334359>Lua 的控制结构</a></li><li class="level-3" data-v-70334359><a href="/Languages/lua/lua.html#lua-函数" class="sidebar-link reco-side-lua-函数" data-v-70334359>Lua 函数</a></li></ul></main> <!----></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div><!----><!----></div></div>
+    <script src="/assets/js/app.0a650b2c.js" defer></script><script src="/assets/js/4.96480d4c.js" defer></script><script src="/assets/js/1.5a7058d1.js" defer></script><script src="/assets/js/58.620e2d71.js" defer></script><script src="/assets/js/13.ef3d5a35.js" defer></script>
+  </body>
+</html>
